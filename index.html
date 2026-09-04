@@ -1,17 +1,23 @@
-```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>GlowVerse - Beauty Store</title>
+
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
+<!-- HEADER -->
+
 <header>
-    <div class="logo">✨ GlowVerse</div>
+
+    <div class="logo">
+        ✨ GlowVerse
+    </div>
 
     <nav>
         <a href="#">Home</a>
@@ -21,140 +27,770 @@
     </nav>
 
     <div class="header-right">
-        <input type="text" id="search" placeholder="Search makeup...">
-        <button class="cart-btn" onclick="showCart()">🛒 Cart (<span id="cart-count">0</span>)</button>
+
+        <input
+            type="text"
+            id="search"
+            placeholder="Search makeup..."
+        >
+
+        <button class="cart-btn" onclick="showCart()">
+            🛒 Cart (<span id="cart-count">0</span>)
+        </button>
+
     </div>
+
 </header>
 
+
+<!-- HERO SECTION -->
+
 <section class="hero">
+
     <div>
-        <p class="small-title">WELCOME TO GLOWVERSE</p>
-        <h1>Beauty that makes<br><span>you glow ✨</span></h1>
-        <p>Discover makeup essentials for your everyday glam.</p>
-        <a href="#products" class="shop-btn">Shop Now →</a>
+
+        <p class="small-title">
+            WELCOME TO GLOWVERSE
+        </p>
+
+        <h1>
+            Beauty that makes
+            <br>
+            <span>you glow ✨</span>
+        </h1>
+
+        <p>
+            Discover makeup essentials for your everyday glam.
+        </p>
+
+        <a href="#products" class="shop-btn">
+            Shop Now →
+        </a>
+
     </div>
+
 </section>
+
+
+<!-- CATEGORIES -->
 
 <section id="categories" class="categories">
-    <h2>Shop By Category</h2>
+
+    <p class="small-title">
+        EXPLORE
+    </p>
+
+    <h2>
+        Shop By Category
+    </h2>
 
     <div class="category-grid">
-        <div class="category-card">💋<h3>Lip Makeup</h3></div>
-        <div class="category-card">✨<h3>Face Makeup</h3></div>
-        <div class="category-card">🌸<h3>Blush</h3></div>
-        <div class="category-card">👁️<h3>Eye Makeup</h3></div>
+
+        <div class="category-card">
+            💋
+            <h3>Lip Makeup</h3>
+        </div>
+
+        <div class="category-card">
+            ✨
+            <h3>Face Makeup</h3>
+        </div>
+
+        <div class="category-card">
+            🌸
+            <h3>Blush</h3>
+        </div>
+
+        <div class="category-card">
+            👁️
+            <h3>Eye Makeup</h3>
+        </div>
+
     </div>
+
 </section>
+
+
+<!-- PRODUCTS -->
 
 <section id="products" class="products">
-    <p class="small-title">OUR COLLECTION</p>
-    <h2>Trending Beauty Products</h2>
 
-    <div class="product-grid" id="product-grid">
+    <p class="small-title">
+        OUR COLLECTION
+    </p>
+
+    <h2>
+        Trending Beauty Products
+    </h2>
+
+
+    <div class="product-grid">
+
+
+        <!-- PRODUCT 1 -->
 
         <div class="product-card" data-name="Velvet Matte Lipstick">
+
             <div class="product-image">
-                <img src="https://images.pexels.com/photos/7667674/pexels-photo-7667674.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Velvet Matte Lipstick">
+
+                <img
+                    src="https://images.pexels.com/photos/7667674/pexels-photo-7667674.jpeg?auto=compress&cs=tinysrgb&w=600"
+                    alt="Velvet Matte Lipstick"
+                >
+
             </div>
-            <h3>Velvet Matte Lipstick</h3>
-            <div class="stars">★★★★★</div>
-            <p class="price">₹599 <del>₹799</del></p>
-            <button onclick="addToCart('Velvet Matte Lipstick', 599)">Add to Cart 🛒</button>
+
+            <h3>
+                Velvet Matte Lipstick
+            </h3>
+
+            <div class="stars">
+                ★★★★★
+            </div>
+
+            <p class="price">
+                ₹599
+                <del>₹799</del>
+            </p>
+
+            <button
+                onclick="addToCart('Velvet Matte Lipstick', 599)"
+            >
+                Add to Cart 🛒
+            </button>
+
         </div>
+
+
+        <!-- PRODUCT 2 -->
 
         <div class="product-card" data-name="Glow Liquid Foundation">
+
             <div class="product-image">
-                <img src="https://images.pexels.com/photos/7256092/pexels-photo-7256092.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Glow Liquid Foundation">
+
+                <img
+                    src="https://images.pexels.com/photos/7256092/pexels-photo-7256092.jpeg?auto=compress&cs=tinysrgb&w=600"
+                    alt="Glow Liquid Foundation"
+                >
+
             </div>
-            <h3>Glow Liquid Foundation</h3>
-            <div class="stars">★★★★☆</div>
-            <p class="price">₹899 <del>₹1,199</del></p>
-            <button onclick="addToCart('Glow Liquid Foundation', 899)">Add to Cart 🛒</button>
+
+            <h3>
+                Glow Liquid Foundation
+            </h3>
+
+            <div class="stars">
+                ★★★★☆
+            </div>
+
+            <p class="price">
+                ₹899
+                <del>₹1,199</del>
+            </p>
+
+            <button
+                onclick="addToCart('Glow Liquid Foundation', 899)"
+            >
+                Add to Cart 🛒
+            </button>
+
         </div>
+
+
+        <!-- PRODUCT 3 -->
 
         <div class="product-card" data-name="Rose Glow Blush">
+
             <div class="product-image">
-                <img src="https://images.pexels.com/photos/7290611/pexels-photo-7290611.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Rose Glow Blush">
+
+                <img
+                    src="https://images.pexels.com/photos/7290611/pexels-photo-7290611.jpeg?auto=compress&cs=tinysrgb&w=600"
+                    alt="Rose Glow Blush"
+                >
+
             </div>
-            <h3>Rose Glow Blush</h3>
-            <div class="stars">★★★★★</div>
-            <p class="price">₹499 <del>₹699</del></p>
-            <button onclick="addToCart('Rose Glow Blush', 499)">Add to Cart 🛒</button>
+
+            <h3>
+                Rose Glow Blush
+            </h3>
+
+            <div class="stars">
+                ★★★★★
+            </div>
+
+            <p class="price">
+                ₹499
+                <del>₹699</del>
+            </p>
+
+            <button
+                onclick="addToCart('Rose Glow Blush', 499)"
+            >
+                Add to Cart 🛒
+            </button>
+
         </div>
+
+
+        <!-- PRODUCT 4 -->
 
         <div class="product-card" data-name="Glam Eyeshadow Palette">
+
             <div class="product-image">
-                <img src="https://images.pexels.com/photos/6662437/pexels-photo-6662437.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Glam Eyeshadow Palette">
+
+                <img
+                    src="https://images.pexels.com/photos/6662437/pexels-photo-6662437.jpeg?auto=compress&cs=tinysrgb&w=600"
+                    alt="Glam Eyeshadow Palette"
+                >
+
             </div>
-            <h3>Glam Eyeshadow Palette</h3>
-            <div class="stars">★★★★★</div>
-            <p class="price">₹799 <del>₹999</del></p>
-            <button onclick="addToCart('Glam Eyeshadow Palette', 799)">Add to Cart 🛒</button>
+
+            <h3>
+                Glam Eyeshadow Palette
+            </h3>
+
+            <div class="stars">
+                ★★★★★
+            </div>
+
+            <p class="price">
+                ₹799
+                <del>₹999</del>
+            </p>
+
+            <button
+                onclick="addToCart('Glam Eyeshadow Palette', 799)"
+            >
+                Add to Cart 🛒
+            </button>
+
         </div>
 
+
+        <!-- PRODUCT 5 -->
+
+        <div class="product-card" data-name="Hydrating Lip Gloss">
+
+            <div class="product-image">
+
+                <img
+                    src="https://images.pexels.com/photos/3373746/pexels-photo-3373746.jpeg?auto=compress&cs=tinysrgb&w=600"
+                    alt="Hydrating Lip Gloss"
+                >
+
+            </div>
+
+            <h3>
+                Hydrating Lip Gloss
+            </h3>
+
+            <div class="stars">
+                ★★★★★
+            </div>
+
+            <p class="price">
+                ₹449
+                <del>₹599</del>
+            </p>
+
+            <button
+                onclick="addToCart('Hydrating Lip Gloss', 449)"
+            >
+                Add to Cart 🛒
+            </button>
+
+        </div>
+
+
+        <!-- PRODUCT 6 -->
+
+        <div class="product-card" data-name="Luxury Makeup Brush Set">
+
+            <div class="product-image">
+
+                <img
+                    src="https://images.pexels.com/photos/2693645/pexels-photo-2693645.jpeg?auto=compress&cs=tinysrgb&w=600"
+                    alt="Luxury Makeup Brush Set"
+                >
+
+            </div>
+
+            <h3>
+                Luxury Makeup Brush Set
+            </h3>
+
+            <div class="stars">
+                ★★★★★
+            </div>
+
+            <p class="price">
+                ₹999
+                <del>₹1,399</del>
+            </p>
+
+            <button
+                onclick="addToCart('Luxury Makeup Brush Set', 999)"
+            >
+                Add to Cart 🛒
+            </button>
+
+        </div>
+
+
+        <!-- PRODUCT 7 -->
+
+        <div class="product-card" data-name="Pink Beauty Compact">
+
+            <div class="product-image">
+
+                <img
+                    src="https://images.pexels.com/photos/3762879/pexels-photo-3762879.jpeg?auto=compress&cs=tinysrgb&w=600"
+                    alt="Pink Beauty Compact"
+                >
+
+            </div>
+
+            <h3>
+                Pink Beauty Compact
+            </h3>
+
+            <div class="stars">
+                ★★★★☆
+            </div>
+
+            <p class="price">
+                ₹699
+                <del>₹899</del>
+            </p>
+
+            <button
+                onclick="addToCart('Pink Beauty Compact', 699)"
+            >
+                Add to Cart 🛒
+            </button>
+
+        </div>
+
+
+        <!-- PRODUCT 8 -->
+
+        <div class="product-card" data-name="Glam Highlighter">
+
+            <div class="product-image">
+
+                <img
+                    src="https://images.pexels.com/photos/4620843/pexels-photo-4620843.jpeg?auto=compress&cs=tinysrgb&w=600"
+                    alt="Glam Highlighter"
+                >
+
+            </div>
+
+            <h3>
+                Glam Highlighter
+            </h3>
+
+            <div class="stars">
+                ★★★★★
+            </div>
+
+            <p class="price">
+                ₹549
+                <del>₹749</del>
+            </p>
+
+            <button
+                onclick="addToCart('Glam Highlighter', 549)"
+            >
+                Add to Cart 🛒
+            </button>
+
+        </div>
+
+
     </div>
+
 </section>
+
+
+<!-- OFFER -->
 
 <section id="offers" class="offers">
-    <h2>🎁 Special Offer</h2>
-    <p>Get amazing beauty products at special prices.</p>
+
+    <h2>
+        🎁 Special Offer
+    </h2>
+
+    <p>
+        Get amazing beauty products at special prices.
+    </p>
+
+    <br>
+
+    <p>
+        ✨ Free shipping on orders above ₹999
+    </p>
+
 </section>
 
+
+<!-- FOOTER -->
+
 <footer>
-    <h2>✨ GlowVerse</h2>
-    <p>Your Beauty. Your Glow.</p>
-    <p>© 2026 GlowVerse</p>
+
+    <h2>
+        ✨ GlowVerse
+    </h2>
+
+    <p>
+        Your Beauty. Your Glow.
+    </p>
+
+    <p>
+        © 2026 GlowVerse
+    </p>
+
 </footer>
 
+
+<!-- CART MODAL -->
+
+<div id="cart-modal" class="cart-modal">
+
+    <div class="cart-box">
+
+        <button
+            class="close-cart"
+            onclick="closeCart()"
+        >
+            ×
+        </button>
+
+        <h2>
+            🛒 Your GlowVerse Cart
+        </h2>
+
+        <div id="cart-items"></div>
+
+        <div class="cart-total">
+
+            <strong>
+                Total: ₹<span id="cart-total">0</span>
+            </strong>
+
+        </div>
+
+        <button
+            class="checkout-btn"
+            onclick="checkout()"
+        >
+            Proceed to Checkout →
+        </button>
+
+    </div>
+
+</div>
+
+
+<!-- JAVASCRIPT -->
+
 <script>
+
 let cart = [];
 
+
+/* ADD PRODUCT TO CART */
+
 function addToCart(name, price) {
-    cart.push({ name: name, price: price });
 
-    document.getElementById("cart-count").innerText = cart.length;
+    let existingProduct =
+        cart.find(item => item.name === name);
 
-    alert(name + " added to your cart! 🛍️");
-}
+    if (existingProduct) {
 
-function showCart() {
-    if (cart.length === 0) {
-        alert("Your cart is empty 🛒");
-        return;
+        existingProduct.quantity++;
+
+    } else {
+
+        cart.push({
+
+            name: name,
+
+            price: price,
+
+            quantity: 1
+
+        });
+
     }
 
-    let message = "Your GlowVerse Cart:\\n\\n";
+    updateCart();
 
-    cart.forEach((item, index) => {
-        message += (index + 1) + ". " + item.name + " - ₹" + item.price + "\\n";
-    });
+    alert(
+        name + " added to your cart! 🛍️"
+    );
 
-    let total = cart.reduce((sum, item) => sum + item.price, 0);
-
-    message += "\\nTotal: ₹" + total;
-
-    alert(message);
 }
 
-document.getElementById("search").addEventListener("input", function() {
 
-    let searchText = this.value.toLowerCase();
-    let products = document.querySelectorAll(".product-card");
+/* UPDATE CART COUNT */
 
-    products.forEach(function(product) {
+function updateCart() {
 
-        let productName = product.dataset.name.toLowerCase();
+    let totalItems = 0;
 
-        if (productName.includes(searchText)) {
-            product.style.display = "block";
-        } else {
-            product.style.display = "none";
-        }
+    cart.forEach(item => {
+
+        totalItems += item.quantity;
 
     });
-});
+
+    document.getElementById(
+        "cart-count"
+    ).innerText = totalItems;
+
+}
+
+
+/* SHOW CART */
+
+function showCart() {
+
+    let cartItems =
+        document.getElementById("cart-items");
+
+    let total = 0;
+
+    cartItems.innerHTML = "";
+
+
+    if (cart.length === 0) {
+
+        cartItems.innerHTML =
+            "<p class='empty-cart'>Your cart is empty 🛒</p>";
+
+    } else {
+
+        cart.forEach((item, index) => {
+
+            let itemTotal =
+                item.price * item.quantity;
+
+            total += itemTotal;
+
+
+            cartItems.innerHTML += `
+
+                <div class="cart-item">
+
+                    <div>
+
+                        <h3>
+                            ${item.name}
+                        </h3>
+
+                        <p>
+                            ₹${item.price} × ${item.quantity}
+                        </p>
+
+                    </div>
+
+
+                    <div class="cart-actions">
+
+                        <button
+                            onclick="decreaseQuantity(${index})"
+                        >
+                            −
+                        </button>
+
+                        <span>
+                            ${item.quantity}
+                        </span>
+
+                        <button
+                            onclick="increaseQuantity(${index})"
+                        >
+                            +
+                        </button>
+
+                        <button
+                            onclick="removeItem(${index})"
+                        >
+                            🗑️
+                        </button>
+
+                    </div>
+
+                </div>
+
+            `;
+
+        });
+
+    }
+
+
+    document.getElementById(
+        "cart-total"
+    ).innerText = total;
+
+
+    document.getElementById(
+        "cart-modal"
+    ).style.display = "flex";
+
+}
+
+
+/* CLOSE CART */
+
+function closeCart() {
+
+    document.getElementById(
+        "cart-modal"
+    ).style.display = "none";
+
+}
+
+
+/* INCREASE QUANTITY */
+
+function increaseQuantity(index) {
+
+    cart[index].quantity++;
+
+    updateCart();
+
+    showCart();
+
+}
+
+
+/* DECREASE QUANTITY */
+
+function decreaseQuantity(index) {
+
+    if (cart[index].quantity > 1) {
+
+        cart[index].quantity--;
+
+    } else {
+
+        cart.splice(index, 1);
+
+    }
+
+    updateCart();
+
+    showCart();
+
+}
+
+
+/* REMOVE PRODUCT */
+
+function removeItem(index) {
+
+    cart.splice(index, 1);
+
+    updateCart();
+
+    showCart();
+
+}
+
+
+/* CHECKOUT */
+
+function checkout() {
+
+    if (cart.length === 0) {
+
+        alert(
+            "Your cart is empty 🛒"
+        );
+
+        return;
+
+    }
+
+
+    alert(
+        "Thank you for shopping with GlowVerse! 💖"
+    );
+
+}
+
+
+/* SEARCH PRODUCTS */
+
+document
+    .getElementById("search")
+    .addEventListener(
+        "input",
+        function() {
+
+            let searchText =
+                this.value.toLowerCase();
+
+            let products =
+                document.querySelectorAll(
+                    ".product-card"
+                );
+
+
+            products.forEach(
+                function(product) {
+
+                    let productName =
+                        product.dataset.name
+                        .toLowerCase();
+
+
+                    if (
+                        productName.includes(
+                            searchText
+                        )
+                    ) {
+
+                        product.style.display =
+                            "block";
+
+                    } else {
+
+                        product.style.display =
+                            "none";
+
+                    }
+
+                }
+            );
+
+        }
+    );
+
+
+/* CLOSE CART WHEN CLICKING OUTSIDE */
+
+window.addEventListener(
+    "click",
+    function(event) {
+
+        let modal =
+            document.getElementById(
+                "cart-modal"
+            );
+
+        if (event.target === modal) {
+
+            closeCart();
+
+        }
+
+    }
+);
+
 </script>
 
 </body>
 </html>
-```
