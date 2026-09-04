@@ -15,12 +15,15 @@
 
     <nav>
         <a href="#">Home</a>
-        <a href="#products">Makeup</a>
         <a href="#categories">Categories</a>
-        <a href="#">Offers</a>
+        <a href="#products">Makeup</a>
+        <a href="#offers">Offers</a>
     </nav>
 
-    <div class="cart">🛒 Cart <span id="cart-count">0</span></div>
+    <div class="header-right">
+        <input type="text" id="search" placeholder="Search makeup...">
+        <button class="cart-btn" onclick="showCart()">🛒 Cart (<span id="cart-count">0</span>)</button>
+    </div>
 </header>
 
 <section class="hero">
@@ -47,49 +50,54 @@
     <p class="small-title">OUR COLLECTION</p>
     <h2>Trending Beauty Products</h2>
 
-    <div class="product-grid">
+    <div class="product-grid" id="product-grid">
 
-        <div class="product-card">
+        <div class="product-card" data-name="Velvet Matte Lipstick">
             <div class="product-image">
-                <img src="https://images.pexels.com/photos/7667674/pexels-photo-7667674.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Red Lipstick">
+                <img src="https://images.pexels.com/photos/7667674/pexels-photo-7667674.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Velvet Matte Lipstick">
             </div>
             <h3>Velvet Matte Lipstick</h3>
             <div class="stars">★★★★★</div>
             <p class="price">₹599 <del>₹799</del></p>
-            <button onclick="addToCart()">Add to Cart 🛒</button>
+            <button onclick="addToCart('Velvet Matte Lipstick', 599)">Add to Cart 🛒</button>
         </div>
 
-        <div class="product-card">
+        <div class="product-card" data-name="Glow Liquid Foundation">
             <div class="product-image">
-                <img src="https://images.pexels.com/photos/7256092/pexels-photo-7256092.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Foundation">
+                <img src="https://images.pexels.com/photos/7256092/pexels-photo-7256092.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Glow Liquid Foundation">
             </div>
             <h3>Glow Liquid Foundation</h3>
             <div class="stars">★★★★☆</div>
             <p class="price">₹899 <del>₹1,199</del></p>
-            <button onclick="addToCart()">Add to Cart 🛒</button>
+            <button onclick="addToCart('Glow Liquid Foundation', 899)">Add to Cart 🛒</button>
         </div>
 
-        <div class="product-card">
+        <div class="product-card" data-name="Rose Glow Blush">
             <div class="product-image">
-                <img src="https://images.pexels.com/photos/7290611/pexels-photo-7290611.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Blush Makeup">
+                <img src="https://images.pexels.com/photos/7290611/pexels-photo-7290611.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Rose Glow Blush">
             </div>
             <h3>Rose Glow Blush</h3>
             <div class="stars">★★★★★</div>
             <p class="price">₹499 <del>₹699</del></p>
-            <button onclick="addToCart()">Add to Cart 🛒</button>
+            <button onclick="addToCart('Rose Glow Blush', 499)">Add to Cart 🛒</button>
         </div>
 
-        <div class="product-card">
+        <div class="product-card" data-name="Glam Eyeshadow Palette">
             <div class="product-image">
-                <img src="https://images.pexels.com/photos/6662437/pexels-photo-6662437.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Eyeshadow Palette">
+                <img src="https://images.pexels.com/photos/6662437/pexels-photo-6662437.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Glam Eyeshadow Palette">
             </div>
             <h3>Glam Eyeshadow Palette</h3>
             <div class="stars">★★★★★</div>
             <p class="price">₹799 <del>₹999</del></p>
-            <button onclick="addToCart()">Add to Cart 🛒</button>
+            <button onclick="addToCart('Glam Eyeshadow Palette', 799)">Add to Cart 🛒</button>
         </div>
 
     </div>
+</section>
+
+<section id="offers" class="offers">
+    <h2>🎁 Special Offer</h2>
+    <p>Get amazing beauty products at special prices.</p>
 </section>
 
 <footer>
@@ -99,13 +107,52 @@
 </footer>
 
 <script>
-let cartCount = 0;
+let cart = [];
 
-function addToCart() {
-    cartCount++;
-    document.getElementById("cart-count").innerText = cartCount;
-    alert("Product added to your cart! 🛍️");
+function addToCart(name, price) {
+    cart.push({ name: name, price: price });
+
+    document.getElementById("cart-count").innerText = cart.length;
+
+    alert(name + " added to your cart! 🛍️");
 }
+
+function showCart() {
+    if (cart.length === 0) {
+        alert("Your cart is empty 🛒");
+        return;
+    }
+
+    let message = "Your GlowVerse Cart:\\n\\n";
+
+    cart.forEach((item, index) => {
+        message += (index + 1) + ". " + item.name + " - ₹" + item.price + "\\n";
+    });
+
+    let total = cart.reduce((sum, item) => sum + item.price, 0);
+
+    message += "\\nTotal: ₹" + total;
+
+    alert(message);
+}
+
+document.getElementById("search").addEventListener("input", function() {
+
+    let searchText = this.value.toLowerCase();
+    let products = document.querySelectorAll(".product-card");
+
+    products.forEach(function(product) {
+
+        let productName = product.dataset.name.toLowerCase();
+
+        if (productName.includes(searchText)) {
+            product.style.display = "block";
+        } else {
+            product.style.display = "none";
+        }
+
+    });
+});
 </script>
 
 </body>
