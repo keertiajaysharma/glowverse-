@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -11,7 +12,7 @@
 
 <body>
 
-<!-- HEADER -->
+<!-- ================= HEADER ================= -->
 
 <header>
 
@@ -34,15 +35,25 @@
             placeholder="Search makeup..."
         >
 
-        <button class="login-btn" onclick="showLogin()">
+        <!-- LOGIN BUTTON -->
+        <button
+            class="login-btn"
+            onclick="openLoginModal()"
+        >
             👤 Login
         </button>
 
-        <button class="wishlist-btn" onclick="showWishlist()">
+        <button
+            class="wishlist-btn"
+            onclick="showWishlist()"
+        >
             ❤️ Wishlist (<span id="wishlist-count">0</span>)
         </button>
 
-        <button class="cart-btn" onclick="showCart()">
+        <button
+            class="cart-btn"
+            onclick="showCart()"
+        >
             🛒 Cart (<span id="cart-count">0</span>)
         </button>
 
@@ -51,7 +62,7 @@
 </header>
 
 
-<!-- HERO -->
+<!-- ================= HERO ================= -->
 
 <section class="hero">
 
@@ -71,7 +82,10 @@
             Discover makeup essentials for your everyday glam.
         </p>
 
-        <a href="#products" class="shop-btn">
+        <a
+            href="#products"
+            class="shop-btn"
+        >
             Shop Now →
         </a>
 
@@ -80,9 +94,12 @@
 </section>
 
 
-<!-- CATEGORIES -->
+<!-- ================= CATEGORIES ================= -->
 
-<section id="categories" class="categories">
+<section
+    id="categories"
+    class="categories"
+>
 
     <p class="small-title">
         EXPLORE
@@ -94,24 +111,44 @@
 
     <div class="category-grid">
 
-        <div class="category-card" onclick="filterCategory('Lip')">
+        <div
+            class="category-card"
+            onclick="filterCategory('Lip')"
+        >
             💋
-            <h3>Lip Makeup</h3>
+            <h3>
+                Lip Makeup
+            </h3>
         </div>
 
-        <div class="category-card" onclick="filterCategory('Face')">
+        <div
+            class="category-card"
+            onclick="filterCategory('Face')"
+        >
             ✨
-            <h3>Face Makeup</h3>
+            <h3>
+                Face Makeup
+            </h3>
         </div>
 
-        <div class="category-card" onclick="filterCategory('Blush')">
+        <div
+            class="category-card"
+            onclick="filterCategory('Blush')"
+        >
             🌸
-            <h3>Blush</h3>
+            <h3>
+                Blush
+            </h3>
         </div>
 
-        <div class="category-card" onclick="filterCategory('Eye')">
+        <div
+            class="category-card"
+            onclick="filterCategory('Eye')"
+        >
             👁️
-            <h3>Eye Makeup</h3>
+            <h3>
+                Eye Makeup
+            </h3>
         </div>
 
     </div>
@@ -119,9 +156,12 @@
 </section>
 
 
-<!-- PRODUCTS -->
+<!-- ================= PRODUCTS ================= -->
 
-<section id="products" class="products">
+<section
+    id="products"
+    class="products"
+>
 
     <p class="small-title">
         OUR COLLECTION
@@ -130,6 +170,8 @@
     <h2>
         Trending Beauty Products
     </h2>
+
+    <!-- FILTER BUTTONS -->
 
     <div class="filter-buttons">
 
@@ -159,11 +201,13 @@
     <div class="product-grid">
 
 
-        <!-- PRODUCT 1 -->
+        <!-- ================= PRODUCT 1 ================= -->
 
-        <div class="product-card"
-             data-name="Velvet Matte Lipstick"
-             data-category="Lip">
+        <div
+            class="product-card"
+            data-name="Velvet Matte Lipstick"
+            data-category="Lip"
+        >
 
             <div class="product-image">
 
@@ -181,7 +225,9 @@
 
             </div>
 
-            <h3>Velvet Matte Lipstick</h3>
+            <h3>
+                Velvet Matte Lipstick
+            </h3>
 
             <div class="stars">
                 ★★★★★
@@ -201,11 +247,13 @@
         </div>
 
 
-        <!-- PRODUCT 2 -->
+        <!-- ================= PRODUCT 2 ================= -->
 
-        <div class="product-card"
-             data-name="Glow Liquid Foundation"
-             data-category="Face">
+        <div
+            class="product-card"
+            data-name="Glow Liquid Foundation"
+            data-category="Face"
+        >
 
             <div class="product-image">
 
@@ -223,7 +271,9 @@
 
             </div>
 
-            <h3>Glow Liquid Foundation</h3>
+            <h3>
+                Glow Liquid Foundation
+            </h3>
 
             <div class="stars">
                 ★★★★☆
@@ -243,11 +293,13 @@
         </div>
 
 
-        <!-- PRODUCT 3 -->
+        <!-- ================= PRODUCT 3 ================= -->
 
-        <div class="product-card"
-             data-name="Rose Glow Blush"
-             data-category="Blush">
+        <div
+            class="product-card"
+            data-name="Rose Glow Blush"
+            data-category="Blush"
+        >
 
             <div class="product-image">
 
@@ -265,7 +317,9 @@
 
             </div>
 
-            <h3>Rose Glow Blush</h3>
+            <h3>
+                Rose Glow Blush
+            </h3>
 
             <div class="stars">
                 ★★★★★
@@ -285,11 +339,13 @@
         </div>
 
 
-        <!-- PRODUCT 4 -->
+        <!-- ================= PRODUCT 4 ================= -->
 
-        <div class="product-card"
-             data-name="Glam Eyeshadow Palette"
-             data-category="Eye">
+        <div
+            class="product-card"
+            data-name="Glam Eyeshadow Palette"
+            data-category="Eye"
+        >
 
             <div class="product-image">
 
@@ -307,7 +363,9 @@
 
             </div>
 
-            <h3>Glam Eyeshadow Palette</h3>
+            <h3>
+                Glam Eyeshadow Palette
+            </h3>
 
             <div class="stars">
                 ★★★★★
@@ -327,11 +385,13 @@
         </div>
 
 
-        <!-- PRODUCT 5 -->
+        <!-- ================= PRODUCT 5 ================= -->
 
-        <div class="product-card"
-             data-name="Hydrating Lip Gloss"
-             data-category="Lip">
+        <div
+            class="product-card"
+            data-name="Hydrating Lip Gloss"
+            data-category="Lip"
+        >
 
             <div class="product-image">
 
@@ -349,7 +409,9 @@
 
             </div>
 
-            <h3>Hydrating Lip Gloss</h3>
+            <h3>
+                Hydrating Lip Gloss
+            </h3>
 
             <div class="stars">
                 ★★★★★
@@ -369,11 +431,13 @@
         </div>
 
 
-        <!-- PRODUCT 6 -->
+        <!-- ================= PRODUCT 6 ================= -->
 
-        <div class="product-card"
-             data-name="Luxury Makeup Brush Set"
-             data-category="Face">
+        <div
+            class="product-card"
+            data-name="Luxury Makeup Brush Set"
+            data-category="Face"
+        >
 
             <div class="product-image">
 
@@ -391,7 +455,9 @@
 
             </div>
 
-            <h3>Luxury Makeup Brush Set</h3>
+            <h3>
+                Luxury Makeup Brush Set
+            </h3>
 
             <div class="stars">
                 ★★★★★
@@ -411,11 +477,13 @@
         </div>
 
 
-        <!-- PRODUCT 7 -->
+        <!-- ================= PRODUCT 7 ================= -->
 
-        <div class="product-card"
-             data-name="Pink Beauty Compact"
-             data-category="Face">
+        <div
+            class="product-card"
+            data-name="Pink Beauty Compact"
+            data-category="Face"
+        >
 
             <div class="product-image">
 
@@ -433,7 +501,9 @@
 
             </div>
 
-            <h3>Pink Beauty Compact</h3>
+            <h3>
+                Pink Beauty Compact
+            </h3>
 
             <div class="stars">
                 ★★★★☆
@@ -453,11 +523,13 @@
         </div>
 
 
-        <!-- PRODUCT 8 -->
+        <!-- ================= PRODUCT 8 ================= -->
 
-        <div class="product-card"
-             data-name="Glam Highlighter"
-             data-category="Blush">
+        <div
+            class="product-card"
+            data-name="Glam Highlighter"
+            data-category="Blush"
+        >
 
             <div class="product-image">
 
@@ -475,7 +547,9 @@
 
             </div>
 
-            <h3>Glam Highlighter</h3>
+            <h3>
+                Glam Highlighter
+            </h3>
 
             <div class="stars">
                 ★★★★★
@@ -499,11 +573,16 @@
 </section>
 
 
-<!-- OFFER -->
+<!-- ================= OFFER ================= -->
 
-<section id="offers" class="offers">
+<section
+    id="offers"
+    class="offers"
+>
 
-    <h2>🎁 Special Offer</h2>
+    <h2>
+        🎁 Special Offer
+    </h2>
 
     <p>
         Get amazing beauty products at special prices.
@@ -518,11 +597,13 @@
 </section>
 
 
-<!-- FOOTER -->
+<!-- ================= FOOTER ================= -->
 
 <footer>
 
-    <h2>✨ GlowVerse</h2>
+    <h2>
+        ✨ GlowVerse
+    </h2>
 
     <p>
         Your Beauty. Your Glow.
@@ -535,9 +616,12 @@
 </footer>
 
 
-<!-- CART MODAL -->
+<!-- ================= CART MODAL ================= -->
 
-<div id="cart-modal" class="cart-modal">
+<div
+    id="cart-modal"
+    class="cart-modal"
+>
 
     <div class="cart-box">
 
@@ -574,9 +658,12 @@
 </div>
 
 
-<!-- WISHLIST MODAL -->
+<!-- ================= WISHLIST MODAL ================= -->
 
-<div id="wishlist-modal" class="cart-modal">
+<div
+    id="wishlist-modal"
+    class="cart-modal"
+>
 
     <div class="cart-box">
 
@@ -598,9 +685,12 @@
 </div>
 
 
-<!-- LOGIN MODAL -->
+<!-- ================= LOGIN MODAL ================= -->
 
-<div id="login-modal" class="cart-modal">
+<div
+    id="login-modal"
+    class="cart-modal"
+>
 
     <div class="login-box">
 
@@ -623,7 +713,9 @@
             Login to continue shopping
         </p>
 
-        <form onsubmit="loginUser(event)">
+        <form
+            onsubmit="loginUser(event)"
+        >
 
             <input
                 type="email"
@@ -649,10 +741,16 @@
         </form>
 
         <p class="signup-text">
+
             Don't have an account?
-            <button onclick="showSignup()">
+
+            <button
+                type="button"
+                onclick="showSignup()"
+            >
                 Sign Up
             </button>
+
         </p>
 
     </div>
@@ -660,9 +758,12 @@
 </div>
 
 
-<!-- SIGNUP MODAL -->
+<!-- ================= SIGNUP MODAL ================= -->
 
-<div id="signup-modal" class="cart-modal">
+<div
+    id="signup-modal"
+    class="cart-modal"
+>
 
     <div class="login-box">
 
@@ -685,7 +786,9 @@
             Join the GlowVerse family
         </p>
 
-        <form onsubmit="signupUser(event)">
+        <form
+            onsubmit="signupUser(event)"
+        >
 
             <input
                 type="text"
@@ -718,10 +821,16 @@
         </form>
 
         <p class="signup-text">
+
             Already have an account?
-            <button onclick="showLogin()">
+
+            <button
+                type="button"
+                onclick="openLoginModal()"
+            >
                 Login
             </button>
+
         </p>
 
     </div>
@@ -729,9 +838,11 @@
 </div>
 
 
-<!-- JAVASCRIPT -->
+<!-- ================= JAVASCRIPT ================= -->
 
 <script>
+
+/* ================= VARIABLES ================= */
 
 let cart = [];
 
@@ -740,12 +851,14 @@ let wishlist = [];
 let currentUser = null;
 
 
-/* CART */
+/* ================= CART ================= */
 
 function addToCart(name, price) {
 
     let existingProduct =
-        cart.find(item => item.name === name);
+        cart.find(
+            item => item.name === name
+        );
 
     if (existingProduct) {
 
@@ -764,7 +877,8 @@ function addToCart(name, price) {
     updateCart();
 
     alert(
-        name + " added to your cart! 🛍️"
+        name +
+        " added to your cart! 🛍️"
     );
 }
 
@@ -773,21 +887,24 @@ function updateCart() {
 
     let totalItems = 0;
 
-    cart.forEach(item => {
-        totalItems += item.quantity;
-    });
+    cart.forEach(
+        item => {
+            totalItems += item.quantity;
+        }
+    );
 
     document.getElementById(
         "cart-count"
     ).innerText = totalItems;
-
 }
 
 
 function showCart() {
 
     let cartItems =
-        document.getElementById("cart-items");
+        document.getElementById(
+            "cart-items"
+        );
 
     let total = 0;
 
@@ -801,57 +918,60 @@ function showCart() {
 
     } else {
 
-        cart.forEach((item, index) => {
+        cart.forEach(
+            function(item, index) {
 
-            total +=
-                item.price * item.quantity;
+                total +=
+                    item.price *
+                    item.quantity;
 
-            cartItems.innerHTML += `
+                cartItems.innerHTML += `
 
-                <div class="cart-item">
+                    <div class="cart-item">
 
-                    <div>
+                        <div>
 
-                        <h3>${item.name}</h3>
+                            <h3>
+                                ${item.name}
+                            </h3>
 
-                        <p>
-                            ₹${item.price} × ${item.quantity}
-                        </p>
+                            <p>
+                                ₹${item.price} × ${item.quantity}
+                            </p>
+
+                        </div>
+
+                        <div class="cart-actions">
+
+                            <button
+                                onclick="decreaseQuantity(${index})"
+                            >
+                                −
+                            </button>
+
+                            <span>
+                                ${item.quantity}
+                            </span>
+
+                            <button
+                                onclick="increaseQuantity(${index})"
+                            >
+                                +
+                            </button>
+
+                            <button
+                                onclick="removeItem(${index})"
+                            >
+                                🗑️
+                            </button>
+
+                        </div>
 
                     </div>
 
-                    <div class="cart-actions">
-
-                        <button
-                            onclick="decreaseQuantity(${index})"
-                        >
-                            −
-                        </button>
-
-                        <span>
-                            ${item.quantity}
-                        </span>
-
-                        <button
-                            onclick="increaseQuantity(${index})"
-                        >
-                            +
-                        </button>
-
-                        <button
-                            onclick="removeItem(${index})"
-                        >
-                            🗑️
-                        </button>
-
-                    </div>
-
-                </div>
-
-            `;
-
-        });
-
+                `;
+            }
+        );
     }
 
 
@@ -863,7 +983,6 @@ function showCart() {
     document.getElementById(
         "cart-modal"
     ).style.display = "flex";
-
 }
 
 
@@ -872,7 +991,6 @@ function closeCart() {
     document.getElementById(
         "cart-modal"
     ).style.display = "none";
-
 }
 
 
@@ -883,13 +1001,14 @@ function increaseQuantity(index) {
     updateCart();
 
     showCart();
-
 }
 
 
 function decreaseQuantity(index) {
 
-    if (cart[index].quantity > 1) {
+    if (
+        cart[index].quantity > 1
+    ) {
 
         cart[index].quantity--;
 
@@ -902,7 +1021,6 @@ function decreaseQuantity(index) {
     updateCart();
 
     showCart();
-
 }
 
 
@@ -913,7 +1031,6 @@ function removeItem(index) {
     updateCart();
 
     showCart();
-
 }
 
 
@@ -926,19 +1043,20 @@ function checkout() {
         );
 
         return;
-
     }
 
     alert(
         "Thank you for shopping with GlowVerse! 💖"
     );
-
 }
 
 
-/* WISHLIST */
+/* ================= WISHLIST ================= */
 
-function toggleWishlist(name, price) {
+function toggleWishlist(
+    name,
+    price
+) {
 
     let existing =
         wishlist.find(
@@ -954,7 +1072,8 @@ function toggleWishlist(name, price) {
             );
 
         alert(
-            name + " removed from wishlist 💔"
+            name +
+            " removed from wishlist 💔"
         );
 
     } else {
@@ -965,13 +1084,12 @@ function toggleWishlist(name, price) {
         });
 
         alert(
-            name + " added to wishlist ❤️"
+            name +
+            " added to wishlist ❤️"
         );
-
     }
 
     updateWishlist();
-
 }
 
 
@@ -979,7 +1097,8 @@ function updateWishlist() {
 
     document.getElementById(
         "wishlist-count"
-    ).innerText = wishlist.length;
+    ).innerText =
+        wishlist.length;
 
 
     let buttons =
@@ -988,24 +1107,29 @@ function updateWishlist() {
         );
 
 
-    buttons.forEach(button => {
+    buttons.forEach(
+        function(button) {
 
-        let product =
-            button.closest(".product-card");
+            let product =
+                button.closest(
+                    ".product-card"
+                );
 
-        let name =
-            product.dataset.name;
+            let name =
+                product.dataset.name;
 
-        let exists =
-            wishlist.some(
-                item => item.name === name
-            );
+            let exists =
+                wishlist.some(
+                    item =>
+                        item.name === name
+                );
 
-        button.innerText =
-            exists ? "❤️" : "♡";
-
-    });
-
+            button.innerText =
+                exists
+                    ? "❤️"
+                    : "♡";
+        }
+    );
 }
 
 
@@ -1019,7 +1143,9 @@ function showWishlist() {
     wishlistItems.innerHTML = "";
 
 
-    if (wishlist.length === 0) {
+    if (
+        wishlist.length === 0
+    ) {
 
         wishlistItems.innerHTML =
             "<p class='empty-cart'>Your wishlist is empty ❤️</p>";
@@ -1064,17 +1190,14 @@ function showWishlist() {
                     </div>
 
                 `;
-
             }
         );
-
     }
 
 
     document.getElementById(
         "wishlist-modal"
     ).style.display = "flex";
-
 }
 
 
@@ -1083,7 +1206,6 @@ function closeWishlist() {
     document.getElementById(
         "wishlist-modal"
     ).style.display = "none";
-
 }
 
 
@@ -1094,13 +1216,14 @@ function removeWishlist(index) {
     updateWishlist();
 
     showWishlist();
-
 }
 
 
-/* CATEGORY FILTER */
+/* ================= CATEGORY FILTER ================= */
 
-function filterCategory(category) {
+function filterCategory(
+    category
+) {
 
     let products =
         document.querySelectorAll(
@@ -1127,9 +1250,7 @@ function filterCategory(category) {
 
                 product.style.display =
                     "none";
-
             }
-
         }
     );
 
@@ -1139,11 +1260,10 @@ function filterCategory(category) {
     ).scrollIntoView({
         behavior: "smooth"
     });
-
 }
 
 
-/* SEARCH */
+/* ================= SEARCH ================= */
 
 document
     .getElementById("search")
@@ -1153,6 +1273,7 @@ document
 
             let searchText =
                 this.value.toLowerCase();
+
 
             let products =
                 document.querySelectorAll(
@@ -1165,7 +1286,7 @@ document
 
                     let productName =
                         product.dataset.name
-                        .toLowerCase();
+                            .toLowerCase();
 
 
                     if (
@@ -1181,37 +1302,68 @@ document
 
                         product.style.display =
                             "none";
-
                     }
-
                 }
             );
-
         }
     );
 
 
-/* LOGIN */
+/* ================= LOGIN ================= */
+
+/*
+   Ye function Login button ko directly
+   login modal open karata hai.
+*/
+
+function openLoginModal() {
+
+    let loginModal =
+        document.getElementById(
+            "login-modal"
+        );
+
+    let signupModal =
+        document.getElementById(
+            "signup-modal"
+        );
+
+
+    if (signupModal) {
+
+        signupModal.style.display =
+            "none";
+    }
+
+
+    if (loginModal) {
+
+        loginModal.style.display =
+            "flex";
+    }
+}
+
+
+/* OLD FUNCTION ALSO KEPT */
 
 function showLogin() {
 
-    document.getElementById(
-        "signup-modal"
-    ).style.display = "none";
-
-    document.getElementById(
-        "login-modal"
-    ).style.display = "flex";
-
+    openLoginModal();
 }
 
 
 function closeLogin() {
 
-    document.getElementById(
-        "login-modal"
-    ).style.display = "none";
+    let loginModal =
+        document.getElementById(
+            "login-modal"
+        );
 
+    if (loginModal) {
+
+        loginModal.style.display =
+            "none";
+    }
 }
 
 
@@ -1219,41 +1371,67 @@ function loginUser(event) {
 
     event.preventDefault();
 
+
     let email =
         document.getElementById(
             "login-email"
         ).value;
 
+
     currentUser = email;
 
+
     closeLogin();
+
 
     alert(
         "Welcome back to GlowVerse! 💖"
     );
-
 }
 
 
+/* ================= SIGNUP ================= */
+
 function showSignup() {
 
-    document.getElementById(
-        "login-modal"
-    ).style.display = "none";
+    let loginModal =
+        document.getElementById(
+            "login-modal"
+        );
 
-    document.getElementById(
-        "signup-modal"
-    ).style.display = "flex";
+    let signupModal =
+        document.getElementById(
+            "signup-modal"
+        );
 
+
+    if (loginModal) {
+
+        loginModal.style.display =
+            "none";
+    }
+
+
+    if (signupModal) {
+
+        signupModal.style.display =
+            "flex";
+    }
 }
 
 
 function closeSignup() {
 
-    document.getElementById(
-        "signup-modal"
-    ).style.display = "none";
+    let signupModal =
+        document.getElementById(
+            "signup-modal"
+        );
 
+    if (signupModal) {
+
+        signupModal.style.display =
+            "none";
+    }
 }
 
 
@@ -1261,25 +1439,37 @@ function signupUser(event) {
 
     event.preventDefault();
 
+
     let name =
         document.getElementById(
             "signup-name"
         ).value;
 
-    currentUser = name;
+
+    let email =
+        document.getElementById(
+            "signup-email"
+        ).value;
+
+
+    currentUser = {
+        name: name,
+        email: email
+    };
+
 
     closeSignup();
+
 
     alert(
         "Account created successfully! Welcome to GlowVerse, "
         + name
         + " 💕"
     );
-
 }
 
 
-/* CLOSE MODALS */
+/* ================= CLOSE MODALS ================= */
 
 window.addEventListener(
     "click",
@@ -1306,24 +1496,46 @@ window.addEventListener(
             );
 
 
-        if (event.target === cartModal) {
+        if (
+            event.target === cartModal
+        ) {
+
             closeCart();
         }
 
-        if (event.target === wishlistModal) {
+
+        if (
+            event.target === wishlistModal
+        ) {
+
             closeWishlist();
         }
 
-        if (event.target === loginModal) {
+
+        if (
+            event.target === loginModal
+        ) {
+
             closeLogin();
         }
 
-        if (event.target === signupModal) {
+
+        if (
+            event.target === signupModal
+        ) {
+
             closeSignup();
         }
 
     }
 );
+
+
+/* ================= INITIAL COUNTS ================= */
+
+updateCart();
+
+updateWishlist();
 
 </script>
 
