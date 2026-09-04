@@ -790,6 +790,176 @@
 </div>
 
 
+<!-- ================= CHECKOUT MODAL ================= -->
+
+<div
+    id="checkout-modal"
+    class="cart-modal"
+>
+
+    <div class="login-box checkout-box">
+
+        <button
+            class="close-cart"
+            onclick="closeCheckout()"
+        >
+            ×
+        </button>
+
+        <div class="login-logo">
+            ✨ GlowVerse
+        </div>
+
+        <h2>
+            Checkout 🛍️
+        </h2>
+
+        <p class="login-subtitle">
+            Complete your order details
+        </p>
+
+
+        <!-- ORDER SUMMARY -->
+
+        <div class="checkout-summary">
+
+            <h3>
+                🛒 Order Summary
+            </h3>
+
+            <div id="checkout-items"></div>
+
+            <hr>
+
+            <h3>
+                Total: ₹<span id="checkout-total">0</span>
+            </h3>
+
+        </div>
+
+
+        <!-- CUSTOMER FORM -->
+
+        <form
+            onsubmit="placeOrder(event)"
+        >
+
+            <input
+                type="text"
+                id="checkout-name"
+                placeholder="Full Name"
+                required
+            >
+
+            <input
+                type="tel"
+                id="checkout-phone"
+                placeholder="Phone Number"
+                pattern="[0-9]{10}"
+                maxlength="10"
+                required
+            >
+
+            <textarea
+                id="checkout-address"
+                placeholder="Full Address"
+                rows="3"
+                required
+            ></textarea>
+
+            <input
+                type="text"
+                id="checkout-city"
+                placeholder="City"
+                required
+            >
+
+            <input
+                type="text"
+                id="checkout-pincode"
+                placeholder="Pincode"
+                pattern="[0-9]{6}"
+                maxlength="6"
+                required
+            >
+
+
+            <select
+                id="payment-method"
+                required
+            >
+
+                <option value="">
+                    Select Payment Method
+                </option>
+
+                <option value="Cash on Delivery">
+                    💵 Cash on Delivery
+                </option>
+
+                <option value="UPI">
+                    📱 UPI
+                </option>
+
+                <option value="Card">
+                    💳 Credit / Debit Card
+                </option>
+
+            </select>
+
+
+            <button
+                type="submit"
+                class="login-submit"
+            >
+                Place Order 🎉
+            </button>
+
+        </form>
+
+    </div>
+
+</div>
+
+
+<!-- ================= ORDER SUCCESS MODAL ================= -->
+
+<div
+    id="success-modal"
+    class="cart-modal"
+>
+
+    <div class="login-box success-box">
+
+        <div class="success-icon">
+            🎉
+        </div>
+
+        <h2>
+            Order Placed Successfully!
+        </h2>
+
+        <p>
+            Thank you for shopping with
+            <strong>GlowVerse</strong> 💖
+        </p>
+
+        <p>
+            Your beauty products are on their way ✨
+        </p>
+
+        <button
+            class="login-submit"
+            onclick="closeSuccess()"
+        >
+            Continue Shopping
+        </button>
+
+    </div>
+
+</div>
+
+
 <!-- ================= LOGIN MODAL ================= -->
 
 <div
@@ -947,7 +1117,7 @@
 
 <script>
 
-/* VARIABLES */
+/* ================= VARIABLES ================= */
 
 let cart = [];
 
@@ -1139,6 +1309,8 @@ function removeItem(index) {
 }
 
 
+/* ================= CHECKOUT ================= */
+
 function checkout() {
 
     if (cart.length === 0) {
@@ -1150,9 +1322,169 @@ function checkout() {
         return;
     }
 
-    alert(
-        "Thank you for shopping with GlowVerse! 💖"
+    closeCart();
+
+    showCheckout();
+}
+
+
+function showCheckout() {
+
+    let checkoutItems =
+        document.getElementById(
+            "checkout-items"
+        );
+
+    let checkoutTotal =
+        document.getElementById(
+            "checkout-total"
+        );
+
+    let total = 0;
+
+    checkoutItems.innerHTML = "";
+
+
+    cart.forEach(
+        function(item) {
+
+            let itemTotal =
+                item.price *
+                item.quantity;
+
+            total += itemTotal;
+
+
+            checkoutItems.innerHTML += `
+
+                <div class="checkout-item">
+
+                    <span>
+                        ${item.name}
+                        × ${item.quantity}
+                    </span>
+
+                    <strong>
+                        ₹${itemTotal}
+                    </strong>
+
+                </div>
+
+            `;
+        }
     );
+
+
+    checkoutTotal.innerText =
+        total;
+
+
+    document.getElementById(
+        "checkout-modal"
+    ).style.display = "flex";
+}
+
+
+function closeCheckout() {
+
+    document.getElementById(
+        "checkout-modal"
+    ).style.display = "none";
+}
+
+
+function placeOrder(event) {
+
+    event.preventDefault();
+
+
+    let name =
+        document.getElementById(
+            "checkout-name"
+        ).value;
+
+
+    let phone =
+        document.getElementById(
+            "checkout-phone"
+        ).value;
+
+
+    let address =
+        document.getElementById(
+            "checkout-address"
+        ).value;
+
+
+    let city =
+        document.getElementById(
+            "checkout-city"
+        ).value;
+
+
+    let pincode =
+        document.getElementById(
+            "checkout-pincode"
+        ).value;
+
+
+    let payment =
+        document.getElementById(
+            "payment-method"
+        ).value;
+
+
+    if (
+        !name ||
+        !phone ||
+        !address ||
+        !city ||
+        !pincode ||
+        !payment
+    ) {
+
+        alert(
+            "Please fill all details."
+        );
+
+        return;
+    }
+
+
+    closeCheckout();
+
+
+    document.getElementById(
+        "success-modal"
+    ).style.display = "flex";
+
+
+    cart = [];
+
+    updateCart();
+
+    event.target.reset();
+
+
+    console.log(
+        "Order Details:",
+        {
+            name: name,
+            phone: phone,
+            address: address,
+            city: city,
+            pincode: pincode,
+            payment: payment
+        }
+    );
+}
+
+
+function closeSuccess() {
+
+    document.getElementById(
+        "success-modal"
+    ).style.display = "none";
 }
 
 
@@ -1660,6 +1992,16 @@ window.addEventListener(
                 "product-modal"
             );
 
+        let checkoutModal =
+            document.getElementById(
+                "checkout-modal"
+            );
+
+        let successModal =
+            document.getElementById(
+                "success-modal"
+            );
+
 
         if (
             event.target === cartModal
@@ -1698,6 +2040,22 @@ window.addEventListener(
         ) {
 
             closeProductDetails();
+        }
+
+
+        if (
+            event.target === checkoutModal
+        ) {
+
+            closeCheckout();
+        }
+
+
+        if (
+            event.target === successModal
+        ) {
+
+            closeSuccess();
         }
 
     }
