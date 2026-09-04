@@ -34,6 +34,10 @@
             placeholder="Search makeup..."
         >
 
+        <button class="wishlist-btn" onclick="showWishlist()">
+            ❤️ Wishlist (<span id="wishlist-count">0</span>)
+        </button>
+
         <button class="cart-btn" onclick="showCart()">
             🛒 Cart (<span id="cart-count">0</span>)
         </button>
@@ -43,7 +47,7 @@
 </header>
 
 
-<!-- HERO SECTION -->
+<!-- HERO -->
 
 <section class="hero">
 
@@ -86,22 +90,22 @@
 
     <div class="category-grid">
 
-        <div class="category-card">
+        <div class="category-card" onclick="filterCategory('Lip')">
             💋
             <h3>Lip Makeup</h3>
         </div>
 
-        <div class="category-card">
+        <div class="category-card" onclick="filterCategory('Face')">
             ✨
             <h3>Face Makeup</h3>
         </div>
 
-        <div class="category-card">
+        <div class="category-card" onclick="filterCategory('Blush')">
             🌸
             <h3>Blush</h3>
         </div>
 
-        <div class="category-card">
+        <div class="category-card" onclick="filterCategory('Eye')">
             👁️
             <h3>Eye Makeup</h3>
         </div>
@@ -124,12 +128,41 @@
     </h2>
 
 
+    <!-- CATEGORY FILTER -->
+
+    <div class="filter-buttons">
+
+        <button onclick="filterCategory('All')">
+            All
+        </button>
+
+        <button onclick="filterCategory('Lip')">
+            💋 Lip
+        </button>
+
+        <button onclick="filterCategory('Face')">
+            ✨ Face
+        </button>
+
+        <button onclick="filterCategory('Blush')">
+            🌸 Blush
+        </button>
+
+        <button onclick="filterCategory('Eye')">
+            👁️ Eyes
+        </button>
+
+    </div>
+
+
     <div class="product-grid">
 
 
         <!-- PRODUCT 1 -->
 
-        <div class="product-card" data-name="Velvet Matte Lipstick">
+        <div class="product-card"
+             data-name="Velvet Matte Lipstick"
+             data-category="Lip">
 
             <div class="product-image">
 
@@ -137,6 +170,13 @@
                     src="https://images.pexels.com/photos/7667674/pexels-photo-7667674.jpeg?auto=compress&cs=tinysrgb&w=600"
                     alt="Velvet Matte Lipstick"
                 >
+
+                <button
+                    class="wishlist-icon"
+                    onclick="toggleWishlist('Velvet Matte Lipstick', 599)"
+                >
+                    ♡
+                </button>
 
             </div>
 
@@ -164,7 +204,9 @@
 
         <!-- PRODUCT 2 -->
 
-        <div class="product-card" data-name="Glow Liquid Foundation">
+        <div class="product-card"
+             data-name="Glow Liquid Foundation"
+             data-category="Face">
 
             <div class="product-image">
 
@@ -172,6 +214,13 @@
                     src="https://images.pexels.com/photos/7256092/pexels-photo-7256092.jpeg?auto=compress&cs=tinysrgb&w=600"
                     alt="Glow Liquid Foundation"
                 >
+
+                <button
+                    class="wishlist-icon"
+                    onclick="toggleWishlist('Glow Liquid Foundation', 899)"
+                >
+                    ♡
+                </button>
 
             </div>
 
@@ -199,7 +248,9 @@
 
         <!-- PRODUCT 3 -->
 
-        <div class="product-card" data-name="Rose Glow Blush">
+        <div class="product-card"
+             data-name="Rose Glow Blush"
+             data-category="Blush">
 
             <div class="product-image">
 
@@ -207,6 +258,13 @@
                     src="https://images.pexels.com/photos/7290611/pexels-photo-7290611.jpeg?auto=compress&cs=tinysrgb&w=600"
                     alt="Rose Glow Blush"
                 >
+
+                <button
+                    class="wishlist-icon"
+                    onclick="toggleWishlist('Rose Glow Blush', 499)"
+                >
+                    ♡
+                </button>
 
             </div>
 
@@ -234,7 +292,9 @@
 
         <!-- PRODUCT 4 -->
 
-        <div class="product-card" data-name="Glam Eyeshadow Palette">
+        <div class="product-card"
+             data-name="Glam Eyeshadow Palette"
+             data-category="Eye">
 
             <div class="product-image">
 
@@ -242,6 +302,13 @@
                     src="https://images.pexels.com/photos/6662437/pexels-photo-6662437.jpeg?auto=compress&cs=tinysrgb&w=600"
                     alt="Glam Eyeshadow Palette"
                 >
+
+                <button
+                    class="wishlist-icon"
+                    onclick="toggleWishlist('Glam Eyeshadow Palette', 799)"
+                >
+                    ♡
+                </button>
 
             </div>
 
@@ -269,7 +336,9 @@
 
         <!-- PRODUCT 5 -->
 
-        <div class="product-card" data-name="Hydrating Lip Gloss">
+        <div class="product-card"
+             data-name="Hydrating Lip Gloss"
+             data-category="Lip">
 
             <div class="product-image">
 
@@ -277,6 +346,13 @@
                     src="https://images.pexels.com/photos/3373746/pexels-photo-3373746.jpeg?auto=compress&cs=tinysrgb&w=600"
                     alt="Hydrating Lip Gloss"
                 >
+
+                <button
+                    class="wishlist-icon"
+                    onclick="toggleWishlist('Hydrating Lip Gloss', 449)"
+                >
+                    ♡
+                </button>
 
             </div>
 
@@ -304,7 +380,9 @@
 
         <!-- PRODUCT 6 -->
 
-        <div class="product-card" data-name="Luxury Makeup Brush Set">
+        <div class="product-card"
+             data-name="Luxury Makeup Brush Set"
+             data-category="Face">
 
             <div class="product-image">
 
@@ -312,6 +390,13 @@
                     src="https://images.pexels.com/photos/2693645/pexels-photo-2693645.jpeg?auto=compress&cs=tinysrgb&w=600"
                     alt="Luxury Makeup Brush Set"
                 >
+
+                <button
+                    class="wishlist-icon"
+                    onclick="toggleWishlist('Luxury Makeup Brush Set', 999)"
+                >
+                    ♡
+                </button>
 
             </div>
 
@@ -339,7 +424,9 @@
 
         <!-- PRODUCT 7 -->
 
-        <div class="product-card" data-name="Pink Beauty Compact">
+        <div class="product-card"
+             data-name="Pink Beauty Compact"
+             data-category="Face">
 
             <div class="product-image">
 
@@ -347,6 +434,13 @@
                     src="https://images.pexels.com/photos/3762879/pexels-photo-3762879.jpeg?auto=compress&cs=tinysrgb&w=600"
                     alt="Pink Beauty Compact"
                 >
+
+                <button
+                    class="wishlist-icon"
+                    onclick="toggleWishlist('Pink Beauty Compact', 699)"
+                >
+                    ♡
+                </button>
 
             </div>
 
@@ -374,7 +468,9 @@
 
         <!-- PRODUCT 8 -->
 
-        <div class="product-card" data-name="Glam Highlighter">
+        <div class="product-card"
+             data-name="Glam Highlighter"
+             data-category="Blush">
 
             <div class="product-image">
 
@@ -382,6 +478,13 @@
                     src="https://images.pexels.com/photos/4620843/pexels-photo-4620843.jpeg?auto=compress&cs=tinysrgb&w=600"
                     alt="Glam Highlighter"
                 >
+
+                <button
+                    class="wishlist-icon"
+                    onclick="toggleWishlist('Glam Highlighter', 549)"
+                >
+                    ♡
+                </button>
 
             </div>
 
@@ -405,7 +508,6 @@
             </button>
 
         </div>
-
 
     </div>
 
@@ -491,14 +593,40 @@
 </div>
 
 
+<!-- WISHLIST MODAL -->
+
+<div id="wishlist-modal" class="cart-modal">
+
+    <div class="cart-box">
+
+        <button
+            class="close-cart"
+            onclick="closeWishlist()"
+        >
+            ×
+        </button>
+
+        <h2>
+            ❤️ My Wishlist
+        </h2>
+
+        <div id="wishlist-items"></div>
+
+    </div>
+
+</div>
+
+
 <!-- JAVASCRIPT -->
 
 <script>
 
 let cart = [];
 
+let wishlist = [];
 
-/* ADD PRODUCT TO CART */
+
+/* ADD TO CART */
 
 function addToCart(name, price) {
 
@@ -512,13 +640,9 @@ function addToCart(name, price) {
     } else {
 
         cart.push({
-
             name: name,
-
             price: price,
-
             quantity: 1
-
         });
 
     }
@@ -528,7 +652,6 @@ function addToCart(name, price) {
     alert(
         name + " added to your cart! 🛍️"
     );
-
 }
 
 
@@ -547,7 +670,6 @@ function updateCart() {
     document.getElementById(
         "cart-count"
     ).innerText = totalItems;
-
 }
 
 
@@ -593,7 +715,6 @@ function showCart() {
                         </p>
 
                     </div>
-
 
                     <div class="cart-actions">
 
@@ -687,7 +808,7 @@ function decreaseQuantity(index) {
 }
 
 
-/* REMOVE PRODUCT */
+/* REMOVE ITEM */
 
 function removeItem(index) {
 
@@ -714,7 +835,6 @@ function checkout() {
 
     }
 
-
     alert(
         "Thank you for shopping with GlowVerse! 💖"
     );
@@ -722,7 +842,218 @@ function checkout() {
 }
 
 
-/* SEARCH PRODUCTS */
+/* WISHLIST */
+
+function toggleWishlist(name, price) {
+
+    let existing =
+        wishlist.find(item => item.name === name);
+
+    if (existing) {
+
+        wishlist =
+            wishlist.filter(
+                item => item.name !== name
+            );
+
+        alert(
+            name + " removed from wishlist 💔"
+        );
+
+    } else {
+
+        wishlist.push({
+            name: name,
+            price: price
+        });
+
+        alert(
+            name + " added to wishlist ❤️"
+        );
+
+    }
+
+    updateWishlist();
+
+}
+
+
+/* UPDATE WISHLIST COUNT */
+
+function updateWishlist() {
+
+    document.getElementById(
+        "wishlist-count"
+    ).innerText = wishlist.length;
+
+
+    let buttons =
+        document.querySelectorAll(
+            ".wishlist-icon"
+        );
+
+    buttons.forEach(button => {
+
+        let productCard =
+            button.closest(".product-card");
+
+        let name =
+            productCard.dataset.name;
+
+        let exists =
+            wishlist.some(
+                item => item.name === name
+            );
+
+        button.innerText =
+            exists ? "❤️" : "♡";
+
+    });
+
+}
+
+
+/* SHOW WISHLIST */
+
+function showWishlist() {
+
+    let wishlistItems =
+        document.getElementById(
+            "wishlist-items"
+        );
+
+    wishlistItems.innerHTML = "";
+
+
+    if (wishlist.length === 0) {
+
+        wishlistItems.innerHTML =
+            "<p class='empty-cart'>Your wishlist is empty ❤️</p>";
+
+    } else {
+
+        wishlist.forEach(
+            function(item, index) {
+
+                wishlistItems.innerHTML += `
+
+                    <div class="cart-item">
+
+                        <div>
+
+                            <h3>
+                                ${item.name}
+                            </h3>
+
+                            <p>
+                                ₹${item.price}
+                            </p>
+
+                        </div>
+
+                        <div class="cart-actions">
+
+                            <button
+                                onclick="addToCart('${item.name}', ${item.price})"
+                            >
+                                🛒
+                            </button>
+
+                            <button
+                                onclick="removeWishlist(${index})"
+                            >
+                                🗑️
+                            </button>
+
+                        </div>
+
+                    </div>
+
+                `;
+
+            }
+        );
+
+    }
+
+
+    document.getElementById(
+        "wishlist-modal"
+    ).style.display = "flex";
+
+}
+
+
+/* CLOSE WISHLIST */
+
+function closeWishlist() {
+
+    document.getElementById(
+        "wishlist-modal"
+    ).style.display = "none";
+
+}
+
+
+/* REMOVE WISHLIST */
+
+function removeWishlist(index) {
+
+    wishlist.splice(index, 1);
+
+    updateWishlist();
+
+    showWishlist();
+
+}
+
+
+/* CATEGORY FILTER */
+
+function filterCategory(category) {
+
+    let products =
+        document.querySelectorAll(
+            ".product-card"
+        );
+
+
+    products.forEach(
+        function(product) {
+
+            let productCategory =
+                product.dataset.category;
+
+
+            if (
+                category === "All" ||
+                productCategory === category
+            ) {
+
+                product.style.display =
+                    "block";
+
+            } else {
+
+                product.style.display =
+                    "none";
+
+            }
+
+        }
+    );
+
+
+    document.getElementById(
+        "products"
+    ).scrollIntoView({
+        behavior: "smooth"
+    });
+
+}
+
+
+/* SEARCH */
 
 document
     .getElementById("search")
@@ -770,20 +1101,33 @@ document
     );
 
 
-/* CLOSE CART WHEN CLICKING OUTSIDE */
+/* CLOSE MODALS OUTSIDE */
 
 window.addEventListener(
     "click",
     function(event) {
 
-        let modal =
+        let cartModal =
             document.getElementById(
                 "cart-modal"
             );
 
-        if (event.target === modal) {
+        let wishlistModal =
+            document.getElementById(
+                "wishlist-modal"
+            );
+
+
+        if (event.target === cartModal) {
 
             closeCart();
+
+        }
+
+
+        if (event.target === wishlistModal) {
+
+            closeWishlist();
 
         }
 
