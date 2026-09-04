@@ -35,7 +35,6 @@
             placeholder="Search makeup..."
         >
 
-        <!-- LOGIN BUTTON -->
         <button
             class="login-btn"
             onclick="openLoginModal()"
@@ -116,9 +115,7 @@
             onclick="filterCategory('Lip')"
         >
             💋
-            <h3>
-                Lip Makeup
-            </h3>
+            <h3>Lip Makeup</h3>
         </div>
 
         <div
@@ -126,9 +123,7 @@
             onclick="filterCategory('Face')"
         >
             ✨
-            <h3>
-                Face Makeup
-            </h3>
+            <h3>Face Makeup</h3>
         </div>
 
         <div
@@ -136,9 +131,7 @@
             onclick="filterCategory('Blush')"
         >
             🌸
-            <h3>
-                Blush
-            </h3>
+            <h3>Blush</h3>
         </div>
 
         <div
@@ -146,9 +139,7 @@
             onclick="filterCategory('Eye')"
         >
             👁️
-            <h3>
-                Eye Makeup
-            </h3>
+            <h3>Eye Makeup</h3>
         </div>
 
     </div>
@@ -170,8 +161,6 @@
     <h2>
         Trending Beauty Products
     </h2>
-
-    <!-- FILTER BUTTONS -->
 
     <div class="filter-buttons">
 
@@ -201,12 +190,19 @@
     <div class="product-grid">
 
 
-        <!-- ================= PRODUCT 1 ================= -->
+        <!-- PRODUCT 1 -->
 
         <div
             class="product-card"
             data-name="Velvet Matte Lipstick"
             data-category="Lip"
+            onclick="showProductDetails(
+                'Velvet Matte Lipstick',
+                599,
+                'https://images.pexels.com/photos/7667674/pexels-photo-7667674.jpeg?auto=compress&cs=tinysrgb&w=600',
+                '★★★★★',
+                'A smooth velvet matte lipstick for a beautiful everyday look.'
+            )"
         >
 
             <div class="product-image">
@@ -218,7 +214,7 @@
 
                 <button
                     class="wishlist-icon"
-                    onclick="toggleWishlist('Velvet Matte Lipstick', 599)"
+                    onclick="event.stopPropagation(); toggleWishlist('Velvet Matte Lipstick', 599)"
                 >
                     ♡
                 </button>
@@ -239,7 +235,7 @@
             </p>
 
             <button
-                onclick="addToCart('Velvet Matte Lipstick', 599)"
+                onclick="event.stopPropagation(); addToCart('Velvet Matte Lipstick', 599)"
             >
                 Add to Cart 🛒
             </button>
@@ -247,12 +243,19 @@
         </div>
 
 
-        <!-- ================= PRODUCT 2 ================= -->
+        <!-- PRODUCT 2 -->
 
         <div
             class="product-card"
             data-name="Glow Liquid Foundation"
             data-category="Face"
+            onclick="showProductDetails(
+                'Glow Liquid Foundation',
+                899,
+                'https://images.pexels.com/photos/7256092/pexels-photo-7256092.jpeg?auto=compress&cs=tinysrgb&w=600',
+                '★★★★☆',
+                'A lightweight liquid foundation that gives your skin a smooth glowing finish.'
+            )"
         >
 
             <div class="product-image">
@@ -264,7 +267,7 @@
 
                 <button
                     class="wishlist-icon"
-                    onclick="toggleWishlist('Glow Liquid Foundation', 899)"
+                    onclick="event.stopPropagation(); toggleWishlist('Glow Liquid Foundation', 899)"
                 >
                     ♡
                 </button>
@@ -285,7 +288,7 @@
             </p>
 
             <button
-                onclick="addToCart('Glow Liquid Foundation', 899)"
+                onclick="event.stopPropagation(); addToCart('Glow Liquid Foundation', 899)"
             >
                 Add to Cart 🛒
             </button>
@@ -293,12 +296,19 @@
         </div>
 
 
-        <!-- ================= PRODUCT 3 ================= -->
+        <!-- PRODUCT 3 -->
 
         <div
             class="product-card"
             data-name="Rose Glow Blush"
             data-category="Blush"
+            onclick="showProductDetails(
+                'Rose Glow Blush',
+                499,
+                'https://images.pexels.com/photos/7290611/pexels-photo-7290611.jpeg?auto=compress&cs=tinysrgb&w=600',
+                '★★★★★',
+                'A soft rose blush that gives your cheeks a natural fresh glow.'
+            )"
         >
 
             <div class="product-image">
@@ -310,7 +320,7 @@
 
                 <button
                     class="wishlist-icon"
-                    onclick="toggleWishlist('Rose Glow Blush', 499)"
+                    onclick="event.stopPropagation(); toggleWishlist('Rose Glow Blush', 499)"
                 >
                     ♡
                 </button>
@@ -331,7 +341,7 @@
             </p>
 
             <button
-                onclick="addToCart('Rose Glow Blush', 499)"
+                onclick="event.stopPropagation(); addToCart('Rose Glow Blush', 499)"
             >
                 Add to Cart 🛒
             </button>
@@ -339,12 +349,19 @@
         </div>
 
 
-        <!-- ================= PRODUCT 4 ================= -->
+        <!-- PRODUCT 4 -->
 
         <div
             class="product-card"
             data-name="Glam Eyeshadow Palette"
             data-category="Eye"
+            onclick="showProductDetails(
+                'Glam Eyeshadow Palette',
+                799,
+                'https://images.pexels.com/photos/6662437/pexels-photo-6662437.jpeg?auto=compress&cs=tinysrgb&w=600',
+                '★★★★★',
+                'A glamorous eyeshadow palette with beautiful shades for everyday and party looks.'
+            )"
         >
 
             <div class="product-image">
@@ -356,7 +373,7 @@
 
                 <button
                     class="wishlist-icon"
-                    onclick="toggleWishlist('Glam Eyeshadow Palette', 799)"
+                    onclick="event.stopPropagation(); toggleWishlist('Glam Eyeshadow Palette', 799)"
                 >
                     ♡
                 </button>
@@ -377,7 +394,7 @@
             </p>
 
             <button
-                onclick="addToCart('Glam Eyeshadow Palette', 799)"
+                onclick="event.stopPropagation(); addToCart('Glam Eyeshadow Palette', 799)"
             >
                 Add to Cart 🛒
             </button>
@@ -385,12 +402,19 @@
         </div>
 
 
-        <!-- ================= PRODUCT 5 ================= -->
+        <!-- PRODUCT 5 -->
 
         <div
             class="product-card"
             data-name="Hydrating Lip Gloss"
             data-category="Lip"
+            onclick="showProductDetails(
+                'Hydrating Lip Gloss',
+                449,
+                'https://images.pexels.com/photos/3373746/pexels-photo-3373746.jpeg?auto=compress&cs=tinysrgb&w=600',
+                '★★★★★',
+                'A glossy hydrating lip gloss that leaves lips soft, shiny and beautiful.'
+            )"
         >
 
             <div class="product-image">
@@ -402,7 +426,7 @@
 
                 <button
                     class="wishlist-icon"
-                    onclick="toggleWishlist('Hydrating Lip Gloss', 449)"
+                    onclick="event.stopPropagation(); toggleWishlist('Hydrating Lip Gloss', 449)"
                 >
                     ♡
                 </button>
@@ -423,7 +447,7 @@
             </p>
 
             <button
-                onclick="addToCart('Hydrating Lip Gloss', 449)"
+                onclick="event.stopPropagation(); addToCart('Hydrating Lip Gloss', 449)"
             >
                 Add to Cart 🛒
             </button>
@@ -431,12 +455,19 @@
         </div>
 
 
-        <!-- ================= PRODUCT 6 ================= -->
+        <!-- PRODUCT 6 -->
 
         <div
             class="product-card"
             data-name="Luxury Makeup Brush Set"
             data-category="Face"
+            onclick="showProductDetails(
+                'Luxury Makeup Brush Set',
+                999,
+                'https://images.pexels.com/photos/2693645/pexels-photo-2693645.jpeg?auto=compress&cs=tinysrgb&w=600',
+                '★★★★★',
+                'A premium makeup brush set designed for smooth and flawless application.'
+            )"
         >
 
             <div class="product-image">
@@ -448,7 +479,7 @@
 
                 <button
                     class="wishlist-icon"
-                    onclick="toggleWishlist('Luxury Makeup Brush Set', 999)"
+                    onclick="event.stopPropagation(); toggleWishlist('Luxury Makeup Brush Set', 999)"
                 >
                     ♡
                 </button>
@@ -469,7 +500,7 @@
             </p>
 
             <button
-                onclick="addToCart('Luxury Makeup Brush Set', 999)"
+                onclick="event.stopPropagation(); addToCart('Luxury Makeup Brush Set', 999)"
             >
                 Add to Cart 🛒
             </button>
@@ -477,12 +508,19 @@
         </div>
 
 
-        <!-- ================= PRODUCT 7 ================= -->
+        <!-- PRODUCT 7 -->
 
         <div
             class="product-card"
             data-name="Pink Beauty Compact"
             data-category="Face"
+            onclick="showProductDetails(
+                'Pink Beauty Compact',
+                699,
+                'https://images.pexels.com/photos/3762879/pexels-photo-3762879.jpeg?auto=compress&cs=tinysrgb&w=600',
+                '★★★★☆',
+                'A compact beauty essential for quick touch-ups and a smooth finish.'
+            )"
         >
 
             <div class="product-image">
@@ -494,7 +532,7 @@
 
                 <button
                     class="wishlist-icon"
-                    onclick="toggleWishlist('Pink Beauty Compact', 699)"
+                    onclick="event.stopPropagation(); toggleWishlist('Pink Beauty Compact', 699)"
                 >
                     ♡
                 </button>
@@ -515,7 +553,7 @@
             </p>
 
             <button
-                onclick="addToCart('Pink Beauty Compact', 699)"
+                onclick="event.stopPropagation(); addToCart('Pink Beauty Compact', 699)"
             >
                 Add to Cart 🛒
             </button>
@@ -523,12 +561,19 @@
         </div>
 
 
-        <!-- ================= PRODUCT 8 ================= -->
+        <!-- PRODUCT 8 -->
 
         <div
             class="product-card"
             data-name="Glam Highlighter"
             data-category="Blush"
+            onclick="showProductDetails(
+                'Glam Highlighter',
+                549,
+                'https://images.pexels.com/photos/4620843/pexels-photo-4620843.jpeg?auto=compress&cs=tinysrgb&w=600',
+                '★★★★★',
+                'A luminous highlighter that adds a beautiful radiant glow to your makeup.'
+            )"
         >
 
             <div class="product-image">
@@ -540,7 +585,7 @@
 
                 <button
                     class="wishlist-icon"
-                    onclick="toggleWishlist('Glam Highlighter', 549)"
+                    onclick="event.stopPropagation(); toggleWishlist('Glam Highlighter', 549)"
                 >
                     ♡
                 </button>
@@ -561,7 +606,7 @@
             </p>
 
             <button
-                onclick="addToCart('Glam Highlighter', 549)"
+                onclick="event.stopPropagation(); addToCart('Glam Highlighter', 549)"
             >
                 Add to Cart 🛒
             </button>
@@ -614,6 +659,66 @@
     </p>
 
 </footer>
+
+
+<!-- ================= PRODUCT DETAILS MODAL ================= -->
+
+<div
+    id="product-modal"
+    class="cart-modal"
+>
+
+    <div class="login-box product-detail-box">
+
+        <button
+            class="close-cart"
+            onclick="closeProductDetails()"
+        >
+            ×
+        </button>
+
+        <img
+            id="detail-image"
+            src=""
+            alt="Product"
+            class="detail-image"
+        >
+
+        <h2 id="detail-name">
+            Product Name
+        </h2>
+
+        <div
+            id="detail-stars"
+            class="stars"
+        >
+            ★★★★★
+        </div>
+
+        <p
+            id="detail-price"
+            class="price"
+        >
+            ₹0
+        </p>
+
+        <p
+            id="detail-description"
+            class="detail-description"
+        >
+            Product description
+        </p>
+
+        <button
+            id="detail-cart-button"
+            class="login-submit"
+        >
+            Add to Cart 🛒
+        </button>
+
+    </div>
+
+</div>
 
 
 <!-- ================= CART MODAL ================= -->
@@ -842,7 +947,7 @@
 
 <script>
 
-/* ================= VARIABLES ================= */
+/* VARIABLES */
 
 let cart = [];
 
@@ -1053,10 +1158,7 @@ function checkout() {
 
 /* ================= WISHLIST ================= */
 
-function toggleWishlist(
-    name,
-    price
-) {
+function toggleWishlist(name, price) {
 
     let existing =
         wishlist.find(
@@ -1221,9 +1323,7 @@ function removeWishlist(index) {
 
 /* ================= CATEGORY FILTER ================= */
 
-function filterCategory(
-    category
-) {
+function filterCategory(category) {
 
     let products =
         document.querySelectorAll(
@@ -1311,11 +1411,6 @@ document
 
 /* ================= LOGIN ================= */
 
-/*
-   Ye function Login button ko directly
-   login modal open karata hai.
-*/
-
 function openLoginModal() {
 
     let loginModal =
@@ -1343,8 +1438,6 @@ function openLoginModal() {
     }
 }
 
-
-/* OLD FUNCTION ALSO KEPT */
 
 function showLogin() {
 
@@ -1469,6 +1562,73 @@ function signupUser(event) {
 }
 
 
+/* ================= PRODUCT DETAILS ================= */
+
+function showProductDetails(
+    name,
+    price,
+    image,
+    stars,
+    description
+) {
+
+    document.getElementById(
+        "detail-name"
+    ).innerText = name;
+
+
+    document.getElementById(
+        "detail-price"
+    ).innerText =
+        "₹" + price;
+
+
+    document.getElementById(
+        "detail-image"
+    ).src = image;
+
+
+    document.getElementById(
+        "detail-stars"
+    ).innerText = stars;
+
+
+    document.getElementById(
+        "detail-description"
+    ).innerText =
+        description;
+
+
+    document.getElementById(
+        "detail-cart-button"
+    ).onclick = function() {
+
+        addToCart(
+            name,
+            price
+        );
+
+        closeProductDetails();
+
+    };
+
+
+    document.getElementById(
+        "product-modal"
+    ).style.display =
+        "flex";
+}
+
+
+function closeProductDetails() {
+
+    document.getElementById(
+        "product-modal"
+    ).style.display =
+        "none";
+}
+
+
 /* ================= CLOSE MODALS ================= */
 
 window.addEventListener(
@@ -1493,6 +1653,11 @@ window.addEventListener(
         let signupModal =
             document.getElementById(
                 "signup-modal"
+            );
+
+        let productModal =
+            document.getElementById(
+                "product-modal"
             );
 
 
@@ -1527,11 +1692,19 @@ window.addEventListener(
             closeSignup();
         }
 
+
+        if (
+            event.target === productModal
+        ) {
+
+            closeProductDetails();
+        }
+
     }
 );
 
 
-/* ================= INITIAL COUNTS ================= */
+/* ================= INITIALIZE ================= */
 
 updateCart();
 
@@ -1540,4 +1713,5 @@ updateWishlist();
 </script>
 
 </body>
+
 </html>
