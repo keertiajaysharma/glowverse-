@@ -4,106 +4,109 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>GlowVerse - Makeup & Beauty</title>
+    <title>GlowVerse - Beauty Store</title>
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-    <header>
-        <h1>✨ GlowVerse</h1>
-        <p>Your Beauty. Your Glow.</p>
+<header>
+    <div class="logo">✨ GlowVerse</div>
 
-        <nav>
-            <a href="#">Home</a>
-            <a href="#">Makeup</a>
-            <a href="#">Skincare</a>
-            <a href="#">New Arrivals</a>
-            <a href="#">Offers</a>
-        </nav>
-    </header>
+    <nav>
+        <a href="#">Home</a>
+        <a href="#products">Makeup</a>
+        <a href="#categories">Categories</a>
+        <a href="#">Offers</a>
+    </nav>
 
-    <main>
+    <div class="cart">🛒 Cart <span id="cart-count">0</span></div>
+</header>
 
-        <section class="hero">
-            <h2>Find Your Perfect Glow 💄</h2>
-            <p>Discover makeup and beauty products made for you.</p>
-            <button>Shop Now</button>
-        </section>
+<section class="hero">
+    <div>
+        <p class="small-title">WELCOME TO GLOWVERSE</p>
+        <h1>Beauty that makes<br><span>you glow ✨</span></h1>
+        <p>Discover makeup essentials for your everyday glam.</p>
+        <a href="#products" class="shop-btn">Shop Now →</a>
+    </div>
+</section>
 
-        <section class="categories">
-            <h2>Shop By Category</h2>
+<section id="categories" class="categories">
+    <h2>Shop By Category</h2>
 
-            <div class="category-grid">
+    <div class="category-grid">
+        <div class="category-card">💋<h3>Lip Makeup</h3></div>
+        <div class="category-card">✨<h3>Face Makeup</h3></div>
+        <div class="category-card">🌸<h3>Blush</h3></div>
+        <div class="category-card">👁️<h3>Eye Makeup</h3></div>
+    </div>
+</section>
 
-                <div class="category-card">
-                    <h3>💋 Lipsticks</h3>
-                    <p>Find your perfect shade.</p>
-                </div>
+<section id="products" class="products">
+    <p class="small-title">OUR COLLECTION</p>
+    <h2>Trending Beauty Products</h2>
 
-                <div class="category-card">
-                    <h3>✨ Foundation</h3>
-                    <p>Flawless base for every look.</p>
-                </div>
+    <div class="product-grid">
 
-                <div class="category-card">
-                    <h3>🌸 Blush</h3>
-                    <p>Add a beautiful natural glow.</p>
-                </div>
-
-                <div class="category-card">
-                    <h3>👁️ Eye Makeup</h3>
-                    <p>Create your perfect eye look.</p>
-                </div>
-
+        <div class="product-card">
+            <div class="product-image">
+                <img src="https://images.pexels.com/photos/7667674/pexels-photo-7667674.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Red Lipstick">
             </div>
-        </section>
+            <h3>Velvet Matte Lipstick</h3>
+            <div class="stars">★★★★★</div>
+            <p class="price">₹599 <del>₹799</del></p>
+            <button onclick="addToCart()">Add to Cart 🛒</button>
+        </div>
 
-        <section class="products">
-            <h2>✨ Trending Products</h2>
-
-            <div class="product-grid">
-
-                <div class="product-card">
-                    <div class="product-image">💄</div>
-                    <h3>Velvet Matte Lipstick</h3>
-                    <p class="rating">★★★★★</p>
-                    <p class="price">₹599 <span>₹799</span></p>
-                    <button>Add to Cart 🛒</button>
-                </div>
-
-                <div class="product-card">
-                    <div class="product-image">✨</div>
-                    <h3>Glow Foundation</h3>
-                    <p class="rating">★★★★☆</p>
-                    <p class="price">₹899 <span>₹1,199</span></p>
-                    <button>Add to Cart 🛒</button>
-                </div>
-
-                <div class="product-card">
-                    <div class="product-image">🌸</div>
-                    <h3>Rose Blush</h3>
-                    <p class="rating">★★★★★</p>
-                    <p class="price">₹499 <span>₹699</span></p>
-                    <button>Add to Cart 🛒</button>
-                </div>
-
-                <div class="product-card">
-                    <div class="product-image">👁️</div>
-                    <h3>Glam Eyeshadow Palette</h3>
-                    <p class="rating">★★★★★</p>
-                    <p class="price">₹799 <span>₹999</span></p>
-                    <button>Add to Cart 🛒</button>
-                </div>
-
+        <div class="product-card">
+            <div class="product-image">
+                <img src="https://images.pexels.com/photos/7256092/pexels-photo-7256092.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Foundation">
             </div>
-        </section>
+            <h3>Glow Liquid Foundation</h3>
+            <div class="stars">★★★★☆</div>
+            <p class="price">₹899 <del>₹1,199</del></p>
+            <button onclick="addToCart()">Add to Cart 🛒</button>
+        </div>
 
-    </main>
+        <div class="product-card">
+            <div class="product-image">
+                <img src="https://images.pexels.com/photos/7290611/pexels-photo-7290611.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Blush Makeup">
+            </div>
+            <h3>Rose Glow Blush</h3>
+            <div class="stars">★★★★★</div>
+            <p class="price">₹499 <del>₹699</del></p>
+            <button onclick="addToCart()">Add to Cart 🛒</button>
+        </div>
 
-    <footer>
-        <p>© 2026 GlowVerse. All rights reserved.</p>
-    </footer>
+        <div class="product-card">
+            <div class="product-image">
+                <img src="https://images.pexels.com/photos/6662437/pexels-photo-6662437.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Eyeshadow Palette">
+            </div>
+            <h3>Glam Eyeshadow Palette</h3>
+            <div class="stars">★★★★★</div>
+            <p class="price">₹799 <del>₹999</del></p>
+            <button onclick="addToCart()">Add to Cart 🛒</button>
+        </div>
+
+    </div>
+</section>
+
+<footer>
+    <h2>✨ GlowVerse</h2>
+    <p>Your Beauty. Your Glow.</p>
+    <p>© 2026 GlowVerse</p>
+</footer>
+
+<script>
+let cartCount = 0;
+
+function addToCart() {
+    cartCount++;
+    document.getElementById("cart-count").innerText = cartCount;
+    alert("Product added to your cart! 🛍️");
+}
+</script>
 
 </body>
 </html>
