@@ -69,8 +69,9 @@ nav a:hover {
     border-color: #d63384;
 }
 
-.cart-btn,
-.wishlist-btn {
+.login-btn,
+.wishlist-btn,
+.cart-btn {
     border: none;
     color: white;
     padding: 11px 15px;
@@ -79,20 +80,28 @@ nav a:hover {
     font-weight: bold;
 }
 
-.cart-btn {
-    background: #d63384;
+.login-btn {
+    background: #555;
+}
+
+.login-btn:hover {
+    background: #333;
 }
 
 .wishlist-btn {
     background: #8e44ad;
 }
 
-.cart-btn:hover {
-    background: #b82b70;
-}
-
 .wishlist-btn:hover {
     background: #71368a;
+}
+
+.cart-btn {
+    background: #d63384;
+}
+
+.cart-btn:hover {
+    background: #b82b70;
 }
 
 
@@ -265,6 +274,8 @@ nav a:hover {
 }
 
 
+/* PRODUCT DETAILS */
+
 .product-card h3 {
     margin-top: 17px;
     font-size: 18px;
@@ -383,17 +394,12 @@ footer p {
 
 .cart-modal {
     display: none;
-
     position: fixed;
     z-index: 2000;
-
     inset: 0;
-
     background: rgba(0,0,0,0.55);
-
     align-items: center;
     justify-content: center;
-
     padding: 20px;
 }
 
@@ -401,19 +407,12 @@ footer p {
     width: 520px;
     max-width: 100%;
     max-height: 85vh;
-
     overflow-y: auto;
-
     background: white;
-
     border-radius: 22px;
-
     padding: 30px;
-
     position: relative;
-
-    box-shadow:
-        0 15px 50px rgba(0,0,0,0.25);
+    box-shadow: 0 15px 50px rgba(0,0,0,0.25);
 }
 
 .cart-box h2 {
@@ -423,7 +422,6 @@ footer p {
 
 .close-cart {
     position: absolute;
-
     top: 15px;
     right: 18px;
 
@@ -438,20 +436,23 @@ footer p {
     border-radius: 50%;
 
     font-size: 25px;
-
     cursor: pointer;
 }
 
+.close-cart:hover {
+    background: #d63384;
+    color: white;
+}
+
+
+/* CART */
+
 .cart-item {
     display: flex;
-
     justify-content: space-between;
     align-items: center;
-
     gap: 15px;
-
     padding: 17px 0;
-
     border-bottom: 1px solid #eee;
 }
 
@@ -472,15 +473,11 @@ footer p {
 
 .cart-actions button {
     border: none;
-
     background: #f8e5ee;
     color: #d63384;
-
     width: 32px;
     height: 32px;
-
     border-radius: 50%;
-
     cursor: pointer;
     font-weight: bold;
 }
@@ -504,12 +501,8 @@ footer p {
 
 .cart-total {
     text-align: right;
-
     font-size: 22px;
-
     margin: 25px 0;
-
-    color: #333;
 }
 
 .cart-total strong {
@@ -518,24 +511,140 @@ footer p {
 
 .checkout-btn {
     width: 100%;
-
     border: none;
-
     background: #d63384;
     color: white;
-
     padding: 15px;
-
     border-radius: 30px;
-
     font-size: 16px;
     font-weight: bold;
-
     cursor: pointer;
 }
 
 .checkout-btn:hover {
     background: #b82b70;
+}
+
+
+/* LOGIN / SIGNUP */
+
+.login-box {
+    width: 420px;
+    max-width: 100%;
+
+    background: white;
+
+    border-radius: 25px;
+
+    padding: 40px 35px;
+
+    position: relative;
+
+    text-align: center;
+
+    box-shadow:
+        0 20px 60px rgba(0,0,0,0.25);
+
+    animation: popup 0.25s ease;
+}
+
+@keyframes popup {
+
+    from {
+        transform: scale(0.85);
+        opacity: 0;
+    }
+
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+
+}
+
+.login-logo {
+    font-size: 25px;
+    font-weight: bold;
+    color: #d63384;
+    margin-bottom: 20px;
+}
+
+.login-box h2 {
+    color: #333;
+    margin-bottom: 8px;
+}
+
+.login-subtitle {
+    color: #888;
+    margin-bottom: 25px;
+}
+
+.login-box form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.login-box input {
+    width: 100%;
+
+    padding: 14px 16px;
+
+    border: 1px solid #ddd;
+
+    border-radius: 12px;
+
+    outline: none;
+
+    font-size: 15px;
+}
+
+.login-box input:focus {
+    border-color: #d63384;
+    box-shadow: 0 0 0 3px rgba(214,51,132,0.1);
+}
+
+.login-submit {
+    width: 100%;
+
+    border: none;
+
+    background: #d63384;
+
+    color: white;
+
+    padding: 14px;
+
+    border-radius: 25px;
+
+    font-size: 16px;
+
+    font-weight: bold;
+
+    cursor: pointer;
+
+    margin-top: 5px;
+}
+
+.login-submit:hover {
+    background: #b82b70;
+}
+
+.signup-text {
+    margin-top: 22px;
+    color: #777;
+}
+
+.signup-text button {
+    border: none;
+    background: none;
+    color: #d63384;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.signup-text button:hover {
+    text-decoration: underline;
 }
 
 
@@ -579,6 +688,7 @@ footer p {
     .header-right {
         width: 100%;
         margin-left: 0;
+        flex-wrap: wrap;
     }
 
     #search {
@@ -587,7 +697,8 @@ footer p {
     }
 
     .wishlist-btn,
-    .cart-btn {
+    .cart-btn,
+    .login-btn {
         padding: 10px 12px;
     }
 
@@ -620,17 +731,14 @@ footer p {
         padding: 35px 20px;
     }
 
-    .cart-box {
-        padding: 22px;
+    .cart-box,
+    .login-box {
+        padding: 25px 20px;
     }
 
     .cart-item {
         align-items: flex-start;
         flex-direction: column;
-    }
-
-    .filter-buttons {
-        gap: 8px;
     }
 
 }
