@@ -34,6 +34,10 @@
             placeholder="Search makeup..."
         >
 
+        <button class="login-btn" onclick="showLogin()">
+            👤 Login
+        </button>
+
         <button class="wishlist-btn" onclick="showWishlist()">
             ❤️ Wishlist (<span id="wishlist-count">0</span>)
         </button>
@@ -127,9 +131,6 @@
         Trending Beauty Products
     </h2>
 
-
-    <!-- CATEGORY FILTER -->
-
     <div class="filter-buttons">
 
         <button onclick="filterCategory('All')">
@@ -180,9 +181,7 @@
 
             </div>
 
-            <h3>
-                Velvet Matte Lipstick
-            </h3>
+            <h3>Velvet Matte Lipstick</h3>
 
             <div class="stars">
                 ★★★★★
@@ -224,9 +223,7 @@
 
             </div>
 
-            <h3>
-                Glow Liquid Foundation
-            </h3>
+            <h3>Glow Liquid Foundation</h3>
 
             <div class="stars">
                 ★★★★☆
@@ -268,9 +265,7 @@
 
             </div>
 
-            <h3>
-                Rose Glow Blush
-            </h3>
+            <h3>Rose Glow Blush</h3>
 
             <div class="stars">
                 ★★★★★
@@ -312,9 +307,7 @@
 
             </div>
 
-            <h3>
-                Glam Eyeshadow Palette
-            </h3>
+            <h3>Glam Eyeshadow Palette</h3>
 
             <div class="stars">
                 ★★★★★
@@ -356,9 +349,7 @@
 
             </div>
 
-            <h3>
-                Hydrating Lip Gloss
-            </h3>
+            <h3>Hydrating Lip Gloss</h3>
 
             <div class="stars">
                 ★★★★★
@@ -400,9 +391,7 @@
 
             </div>
 
-            <h3>
-                Luxury Makeup Brush Set
-            </h3>
+            <h3>Luxury Makeup Brush Set</h3>
 
             <div class="stars">
                 ★★★★★
@@ -444,9 +433,7 @@
 
             </div>
 
-            <h3>
-                Pink Beauty Compact
-            </h3>
+            <h3>Pink Beauty Compact</h3>
 
             <div class="stars">
                 ★★★★☆
@@ -488,9 +475,7 @@
 
             </div>
 
-            <h3>
-                Glam Highlighter
-            </h3>
+            <h3>Glam Highlighter</h3>
 
             <div class="stars">
                 ★★★★★
@@ -518,9 +503,7 @@
 
 <section id="offers" class="offers">
 
-    <h2>
-        🎁 Special Offer
-    </h2>
+    <h2>🎁 Special Offer</h2>
 
     <p>
         Get amazing beauty products at special prices.
@@ -539,9 +522,7 @@
 
 <footer>
 
-    <h2>
-        ✨ GlowVerse
-    </h2>
+    <h2>✨ GlowVerse</h2>
 
     <p>
         Your Beauty. Your Glow.
@@ -617,6 +598,137 @@
 </div>
 
 
+<!-- LOGIN MODAL -->
+
+<div id="login-modal" class="cart-modal">
+
+    <div class="login-box">
+
+        <button
+            class="close-cart"
+            onclick="closeLogin()"
+        >
+            ×
+        </button>
+
+        <div class="login-logo">
+            ✨ GlowVerse
+        </div>
+
+        <h2>
+            Welcome Back 💖
+        </h2>
+
+        <p class="login-subtitle">
+            Login to continue shopping
+        </p>
+
+        <form onsubmit="loginUser(event)">
+
+            <input
+                type="email"
+                id="login-email"
+                placeholder="Email Address"
+                required
+            >
+
+            <input
+                type="password"
+                id="login-password"
+                placeholder="Password"
+                required
+            >
+
+            <button
+                type="submit"
+                class="login-submit"
+            >
+                Login
+            </button>
+
+        </form>
+
+        <p class="signup-text">
+            Don't have an account?
+            <button onclick="showSignup()">
+                Sign Up
+            </button>
+        </p>
+
+    </div>
+
+</div>
+
+
+<!-- SIGNUP MODAL -->
+
+<div id="signup-modal" class="cart-modal">
+
+    <div class="login-box">
+
+        <button
+            class="close-cart"
+            onclick="closeSignup()"
+        >
+            ×
+        </button>
+
+        <div class="login-logo">
+            ✨ GlowVerse
+        </div>
+
+        <h2>
+            Create Account 💕
+        </h2>
+
+        <p class="login-subtitle">
+            Join the GlowVerse family
+        </p>
+
+        <form onsubmit="signupUser(event)">
+
+            <input
+                type="text"
+                id="signup-name"
+                placeholder="Full Name"
+                required
+            >
+
+            <input
+                type="email"
+                id="signup-email"
+                placeholder="Email Address"
+                required
+            >
+
+            <input
+                type="password"
+                id="signup-password"
+                placeholder="Create Password"
+                required
+            >
+
+            <button
+                type="submit"
+                class="login-submit"
+            >
+                Create Account
+            </button>
+
+        </form>
+
+        <p class="signup-text">
+            Already have an account?
+            <button onclick="showLogin()">
+                Login
+            </button>
+        </p>
+
+    </div>
+
+</div>
+
+
 <!-- JAVASCRIPT -->
 
 <script>
@@ -625,8 +737,10 @@ let cart = [];
 
 let wishlist = [];
 
+let currentUser = null;
 
-/* ADD TO CART */
+
+/* CART */
 
 function addToCart(name, price) {
 
@@ -655,25 +769,20 @@ function addToCart(name, price) {
 }
 
 
-/* UPDATE CART COUNT */
-
 function updateCart() {
 
     let totalItems = 0;
 
     cart.forEach(item => {
-
         totalItems += item.quantity;
-
     });
 
     document.getElementById(
         "cart-count"
     ).innerText = totalItems;
+
 }
 
-
-/* SHOW CART */
 
 function showCart() {
 
@@ -694,11 +803,8 @@ function showCart() {
 
         cart.forEach((item, index) => {
 
-            let itemTotal =
+            total +=
                 item.price * item.quantity;
-
-            total += itemTotal;
-
 
             cartItems.innerHTML += `
 
@@ -706,9 +812,7 @@ function showCart() {
 
                     <div>
 
-                        <h3>
-                            ${item.name}
-                        </h3>
+                        <h3>${item.name}</h3>
 
                         <p>
                             ₹${item.price} × ${item.quantity}
@@ -763,8 +867,6 @@ function showCart() {
 }
 
 
-/* CLOSE CART */
-
 function closeCart() {
 
     document.getElementById(
@@ -773,8 +875,6 @@ function closeCart() {
 
 }
 
-
-/* INCREASE QUANTITY */
 
 function increaseQuantity(index) {
 
@@ -786,8 +886,6 @@ function increaseQuantity(index) {
 
 }
 
-
-/* DECREASE QUANTITY */
 
 function decreaseQuantity(index) {
 
@@ -808,8 +906,6 @@ function decreaseQuantity(index) {
 }
 
 
-/* REMOVE ITEM */
-
 function removeItem(index) {
 
     cart.splice(index, 1);
@@ -820,8 +916,6 @@ function removeItem(index) {
 
 }
 
-
-/* CHECKOUT */
 
 function checkout() {
 
@@ -847,7 +941,10 @@ function checkout() {
 function toggleWishlist(name, price) {
 
     let existing =
-        wishlist.find(item => item.name === name);
+        wishlist.find(
+            item => item.name === name
+        );
+
 
     if (existing) {
 
@@ -878,8 +975,6 @@ function toggleWishlist(name, price) {
 }
 
 
-/* UPDATE WISHLIST COUNT */
-
 function updateWishlist() {
 
     document.getElementById(
@@ -892,13 +987,14 @@ function updateWishlist() {
             ".wishlist-icon"
         );
 
+
     buttons.forEach(button => {
 
-        let productCard =
+        let product =
             button.closest(".product-card");
 
         let name =
-            productCard.dataset.name;
+            product.dataset.name;
 
         let exists =
             wishlist.some(
@@ -912,8 +1008,6 @@ function updateWishlist() {
 
 }
 
-
-/* SHOW WISHLIST */
 
 function showWishlist() {
 
@@ -984,8 +1078,6 @@ function showWishlist() {
 }
 
 
-/* CLOSE WISHLIST */
-
 function closeWishlist() {
 
     document.getElementById(
@@ -994,8 +1086,6 @@ function closeWishlist() {
 
 }
 
-
-/* REMOVE WISHLIST */
 
 function removeWishlist(index) {
 
@@ -1101,7 +1191,95 @@ document
     );
 
 
-/* CLOSE MODALS OUTSIDE */
+/* LOGIN */
+
+function showLogin() {
+
+    document.getElementById(
+        "signup-modal"
+    ).style.display = "none";
+
+    document.getElementById(
+        "login-modal"
+    ).style.display = "flex";
+
+}
+
+
+function closeLogin() {
+
+    document.getElementById(
+        "login-modal"
+    ).style.display = "none";
+
+}
+
+
+function loginUser(event) {
+
+    event.preventDefault();
+
+    let email =
+        document.getElementById(
+            "login-email"
+        ).value;
+
+    currentUser = email;
+
+    closeLogin();
+
+    alert(
+        "Welcome back to GlowVerse! 💖"
+    );
+
+}
+
+
+function showSignup() {
+
+    document.getElementById(
+        "login-modal"
+    ).style.display = "none";
+
+    document.getElementById(
+        "signup-modal"
+    ).style.display = "flex";
+
+}
+
+
+function closeSignup() {
+
+    document.getElementById(
+        "signup-modal"
+    ).style.display = "none";
+
+}
+
+
+function signupUser(event) {
+
+    event.preventDefault();
+
+    let name =
+        document.getElementById(
+            "signup-name"
+        ).value;
+
+    currentUser = name;
+
+    closeSignup();
+
+    alert(
+        "Account created successfully! Welcome to GlowVerse, "
+        + name
+        + " 💕"
+    );
+
+}
+
+
+/* CLOSE MODALS */
 
 window.addEventListener(
     "click",
@@ -1117,18 +1295,31 @@ window.addEventListener(
                 "wishlist-modal"
             );
 
+        let loginModal =
+            document.getElementById(
+                "login-modal"
+            );
+
+        let signupModal =
+            document.getElementById(
+                "signup-modal"
+            );
+
 
         if (event.target === cartModal) {
-
             closeCart();
-
         }
 
-
         if (event.target === wishlistModal) {
-
             closeWishlist();
+        }
 
+        if (event.target === loginModal) {
+            closeLogin();
+        }
+
+        if (event.target === signupModal) {
+            closeSignup();
         }
 
     }
